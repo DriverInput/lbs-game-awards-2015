@@ -29,7 +29,6 @@ namespace game
             X = 0;
             Y = 0;
         }
-
         public int[,] ToInt()
         {
             int[,] Output = new int[X , Y];

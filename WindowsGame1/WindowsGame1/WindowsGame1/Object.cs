@@ -13,16 +13,16 @@ namespace game
 {
     class Object
     {
-        TextureManager TM = new TextureManager();
+        protected TextureManager TM = new TextureManager();
 
-        Texture2D texture;
-        Rectangle rectangle;
-        Vector2 position;
-        Vector2 velocity;
-        float speed;
-        int life;
-        int maxLife;
-        int dmg;
+        protected Texture2D texture;
+        protected Rectangle rectangle;
+        protected Vector2 position;
+        protected Vector2 velocity;
+        protected float speed;
+        protected int life;
+        protected int maxLife;
+        protected int dmg;
 
 
 

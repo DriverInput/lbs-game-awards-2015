@@ -18,6 +18,9 @@ namespace game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Map map;
+
+        List<Tile> tiles = new List<Tile>();
 
         public Game1()
         {
@@ -47,7 +50,17 @@ namespace game
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             TextureManager.LoadAll(Content);
-            // TODO: use this.Content to load your game content here
+            map = MapLoader.LoadMap("");
+            for (int y = 0; y < map.Y; y++)
+            {
+                for (int x = 0; x < map.X; x++)
+                {
+                    if (map[x,y] > 1)
+                    {
+                        tiles.Add(new Tile((int)map[x, y], new Vector2(x, y), 64));
+                    }
+                }
+            }
         }
 
         /// <summary>
