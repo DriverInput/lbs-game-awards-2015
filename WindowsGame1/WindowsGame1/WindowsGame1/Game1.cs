@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace WindowsGame1
+namespace game
 {
     /// <summary>
     /// This is the main type for your game
@@ -46,7 +46,7 @@ namespace WindowsGame1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            TextureManager.LoadAll(Content);
             // TODO: use this.Content to load your game content here
         }
 
