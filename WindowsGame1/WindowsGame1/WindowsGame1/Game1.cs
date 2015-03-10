@@ -19,6 +19,7 @@ namespace game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Map map;
+        Player player = new Player();
 
         List<Tile> tiles = new List<Tile>();
 
@@ -82,6 +83,8 @@ namespace game
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+
+            player.Update();
 
             // TODO: Add your update logic here
 
