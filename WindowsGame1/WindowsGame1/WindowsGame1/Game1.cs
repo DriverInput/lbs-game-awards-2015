@@ -84,7 +84,7 @@ namespace game
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            player.Update();
+            player.Update(gameTime);
 
             // TODO: Add your update logic here
 

@@ -25,6 +25,8 @@ namespace game
 
         bool isRolling;
 
+        Animation playerAnimation;
+
         public Player()
         {
             amount = 0.6f;
@@ -36,7 +38,12 @@ namespace game
             rollMaxTimer = 40;
         }
 
-        public void Update() 
+        public void LaddaenKatt(ContentManager Content)
+        {
+            playerAnimation = new Animation(Content, "walking", 150f, 8, true, position, 8, 0);
+        }
+
+        public void Update(GameTime gameTime) 
         {
             newState = Keyboard.GetState();
 
@@ -105,6 +112,8 @@ namespace game
             }
 
             oldState = newState;
+
+            playerAnimation.PlayAnimation(gameTime);
         }
     }
 }

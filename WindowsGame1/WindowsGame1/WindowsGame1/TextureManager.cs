@@ -14,6 +14,7 @@ namespace game
     public class TextureManager
     {
         static Texture2D test;
+        static Texture2D player;
         public TextureManager()
         {
                
@@ -21,7 +22,8 @@ namespace game
 
         public static void LoadAll(ContentManager Content)
         {
-            test = Content.Load<Texture2D>("test");
+            //test = Content.Load<Texture2D>("test");
+            player = Content.Load<Texture2D>("walking");
         }
     }
 }
