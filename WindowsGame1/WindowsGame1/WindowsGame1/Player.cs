@@ -27,7 +27,7 @@ namespace game
 
         Animation playerAnimation;
 
-        public Player()
+        public Player(ContentManager Content)
         {
             amount = 0.6f;
             rollLength = 128 * 5f; // setting more exact values later
@@ -36,6 +36,7 @@ namespace game
             isRolling = false;
             rollTimer = 0;
             rollMaxTimer = 40;
+            LaddaenKatt(Content);
         }
 
         public void LaddaenKatt(ContentManager Content)

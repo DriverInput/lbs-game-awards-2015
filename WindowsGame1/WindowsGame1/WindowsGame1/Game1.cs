@@ -19,7 +19,7 @@ namespace game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Map map;
-        Player player = new Player();
+        Player player;
 
         List<Tile> tiles = new List<Tile>();
 
@@ -27,6 +27,7 @@ namespace game
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            player = new Player(Content);
         }
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace game
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             TextureManager.LoadAll(Content);
-            map = MapLoader.LoadMap("");
+            map = MapLoader.LoadMap("C:\\PerfLogs\\Nytt textdokument.txt");
             for (int y = 0; y < map.Y; y++)
             {
                 for (int x = 0; x < map.X; x++)
