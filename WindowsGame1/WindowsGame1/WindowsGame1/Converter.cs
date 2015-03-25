@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +7,18 @@ namespace WindowsGame1
 {
     class Converter
     {
-        class Float
+        public class Vector2
+        {
+            public static bool AnyGreater(Microsoft.Xna.Framework.Vector2 x1 ,Microsoft.Xna.Framework.Vector2 x2)
+            {
+                if (x1.X > x2.X)
+                    return true;
+                if (x1.Y > x2.Y)
+                    return true;
+                return false;
+            }
+        }
+        public class Float
         {
             public static float Cos(float Angle)
             {
@@ -20,9 +30,9 @@ namespace WindowsGame1
                 return (float)Math.Sin(Angle);
             }
 
-            public static Vector2 CosSin(float Angle)
+            public static Microsoft.Xna.Framework.Vector2 CosSin(float Angle)
             {
-                return new Vector2(Cos(Angle), Sin(Angle));
+                return new Microsoft.Xna.Framework.Vector2(Cos(Angle), Sin(Angle));
             }
 
         }
