@@ -37,6 +37,7 @@ namespace game
             rollTimer = 0;
             rollMaxTimer = 40;
             LaddaenKatt(Content);
+            TextureManager.InitializeTextures.Add("walking", "walking");
         }
 
         public void LaddaenKatt(ContentManager Content)

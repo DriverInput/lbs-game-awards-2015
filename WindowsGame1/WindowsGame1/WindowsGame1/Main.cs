@@ -20,6 +20,10 @@ namespace game
 
         List<Tile> tiles = new List<Tile>();
 
+        #region Top Hemligt
+            //Jag ljög
+        #endregion
+
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -30,6 +34,7 @@ namespace game
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            //HAHA #REKT MLG 360NOSCOPED FAG GIT GUD SNASE!
 
             base.Initialize();
         }

@@ -18,6 +18,7 @@ namespace game
         float frameTime;
         int numOfFrames, currentFrame, width, height, frameWidth, frameHeight, divide, row;
         bool looping;
+        string assetName;
 
         public Vector2 Position
         {
@@ -31,17 +32,17 @@ namespace game
             set { this.frameTime = value; }
         }
 
-        public Animation(ContentManager Content, string asset, float frameSpeed, int numOfFrames, bool looping, Vector2 position, int divide, int row)
+        public Animation(ContentManager Content, string assetName, float frameSpeed, int numOfFrames, bool looping, Vector2 position, int divide, int row)
         {
             this.frameTime = frameSpeed;
             this.numOfFrames = numOfFrames;
             this.looping = looping;
-            this.animation = Content.Load<Texture2D>(asset);
-            frameWidth = (animation.Width / numOfFrames);
+            frameWidth = (TextureManager.Textures[assetName].Width/ numOfFrames);
             frameHeight = (animation.Height / divide);
             this.position = position;
             this.divide = divide;
             this.row = row;
+            this.assetName = assetName;
         }
 
         public void PlayAnimation(GameTime gameTime)
@@ -66,7 +67,7 @@ namespace game
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(animation, position, sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
+            spriteBatch.Draw(TextureManager.Textures[assetName], position, sourceRectangle, Color.White, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 1f);
         }
 
     }
