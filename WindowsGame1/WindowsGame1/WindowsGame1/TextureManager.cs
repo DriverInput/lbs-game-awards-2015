@@ -13,17 +13,16 @@ namespace game
 {
     public class TextureManager
     {
-        static Texture2D test;
-        static Texture2D player;
-        public TextureManager()
+        public static Dictionary<string, string> InitializeTextures = new Dictionary<string, string>();
+        public static Dictionary<string, Texture2D> Textures = new Dictionary<string, Texture2D>();
+        
+        public static void LoadContent(ContentManager cm)
         {
-               
-        }
-
-        public static void LoadAll(ContentManager Content)
-        {
-            //test = Content.Load<Texture2D>("test");
-            player = Content.Load<Texture2D>("walking");
+            foreach (KeyValuePair<string, string> item in InitializeTextures)
+            {
+                Textures.Add(item.Key, cm.Load<Texture2D>(item.Value));
+            }
+            InitializeTextures = null;
         }
     }
 }
