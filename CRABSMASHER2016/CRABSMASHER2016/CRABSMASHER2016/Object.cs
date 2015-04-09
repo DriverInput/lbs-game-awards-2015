@@ -86,9 +86,9 @@ namespace game
         public void Draw(SpriteBatch sb)
         {
             sb.Draw(TextureManager.Textures[textureID], rectangle, sourceRectangle, Color.White, angle + angleOffset, origin, SpriteEffects.None, 1f);
-        }
+        }   
 
-        static Vector2 RectangleToRectangle(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2)
+        public static Vector2 RectangleToRectangle(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2)
         {
             float dw = 0.5f * (w1 + w2);
             float dh = 0.5f * (h1 + h2);

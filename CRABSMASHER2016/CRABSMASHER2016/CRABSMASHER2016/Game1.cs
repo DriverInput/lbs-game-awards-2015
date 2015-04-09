@@ -18,6 +18,7 @@ namespace game
 
         Map map;
         Player player;
+        MiniCrab miniCrab;
         Camera camera;
 
         List<Tile> tiles = new List<Tile>();
@@ -33,7 +34,9 @@ namespace game
         protected override void Initialize()
         {
             TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
+            TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
             player = new Player();
+            miniCrab = new MiniCrab();
             camera = new Camera();
             base.Initialize();
         }
@@ -50,10 +53,11 @@ namespace game
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             player.Update();
+            miniCrab.Update(player);
             camera.Pos = player.position + new Vector2(player.width/2, player.height/2);
 
             base.Update(gameTime);
@@ -64,6 +68,7 @@ namespace game
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null,null,null,null,camera.get_transformation(GraphicsDevice));
             player.Draw(spriteBatch);
+            miniCrab.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

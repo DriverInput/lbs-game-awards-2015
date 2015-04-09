@@ -5,7 +5,7 @@ using System.Text;
 
 namespace game
 {
-    class Converter
+    public class Converter
     {
         public class Vector2
         {

@@ -1,1 +1,2 @@
 Content\spriteplaceholder.xnb
+Content\lil krabba spritesheet.xnb
