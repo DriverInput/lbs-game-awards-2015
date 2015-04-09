@@ -1,0 +1,12 @@
+C:\Users\su14bbenjamin\Documents\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.exe
+C:\Users\su14bbenjamin\Documents\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.pdb
+C:\Users\su14bbenjamin\Documents\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.csprojResolveAssemblyReference.cache
+C:\Users\su14bbenjamin\Documents\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\su14bbenjamin\Documents\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
+C:\Users\su14bbenjamin\Documents\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
+C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
+C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
+C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.exe
+C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.pdb

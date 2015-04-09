@@ -1,0 +1,2 @@
+C:\Users\su14bbenjamin\Documents\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache
+C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\WindowsGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache
