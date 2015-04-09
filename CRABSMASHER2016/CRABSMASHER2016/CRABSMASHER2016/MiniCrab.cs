@@ -28,7 +28,7 @@ namespace game
 
         public void Update(Player player) 
         {
-            targetAngle = (float)Math.Atan2(player.position.Y - position.Y, player.position.X - position.X);
+            targetAngle = (float)Math.Atan2((player.position.Y + player.height / 2) - position.Y, (player.position.X + player.width / 2) - position.X);
             velocity = Converter.Float.CosSin(targetAngle) * speed;
             position += velocity;
 

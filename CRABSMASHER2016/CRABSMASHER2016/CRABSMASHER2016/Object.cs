@@ -104,24 +104,24 @@ namespace game
                 {
                     if (wy > -hx)
                     {
-                        y1 = y2 + h2 + h1 / 2;
+                        y1 = y2 + h2;
 
                     }
                     else
                     {
 
-                        x1 = x2 - h1 / 2;
+                        x1 = x2 - w1;
                     }
                 }
                 else
                 {
                     if (wy > -hx)
                     {
-                        x1 = x2 + w2 + w1 / 2;
+                        x1 = x2 + w2;
                     }
                     else
                     {
-                        y1 = y2 - h1 / 2;
+                        y1 = y2 - h1;
                     }
                 }
             }
