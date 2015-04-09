@@ -46,7 +46,6 @@ namespace game
         public int CurrentFrame {
             get
             {
-                Console.WriteLine(currentFrame);
                 return currentFrame;
             }
             set
