@@ -58,10 +58,10 @@ namespace game
 
             Dir[] dirs = new Dir[]
             {
-                new Dir(new Keys[]{Keys.Up, Keys.Right}, 7, new Vector2(-1, 1)),
+                new Dir(new Keys[]{Keys.Up, Keys.Right}, 7, new Vector2(1, -1)),
                 new Dir(new Keys[]{Keys.Up, Keys.Left}, 5, new Vector2(-1, -1)),
                 new Dir(new Keys[]{Keys.Down, Keys.Right}, 1, new Vector2(1, 1)),
-                new Dir(new Keys[]{Keys.Down, Keys.Left}, 3, new Vector2(1, -1)),
+                new Dir(new Keys[]{Keys.Down, Keys.Left}, 3, new Vector2(-1, 1)),
                 new Dir(new Keys[]{Keys.Up}, 6, new Vector2(0, -1)),
                 new Dir(new Keys[]{Keys.Down}, 2, new Vector2(0, 1)),
                 new Dir(new Keys[]{Keys.Right}, 0, new Vector2(1, 0)),
@@ -78,8 +78,6 @@ namespace game
                     FrameTimer++;
                     this.dir = dir.dir;
                     position += dir.VecDir * speed;
-                    //position.X += dir.VecDir.X * speed;
-                    //position.Y += dir.VecDir.Y * speed;
                     break;
                 }
             }
