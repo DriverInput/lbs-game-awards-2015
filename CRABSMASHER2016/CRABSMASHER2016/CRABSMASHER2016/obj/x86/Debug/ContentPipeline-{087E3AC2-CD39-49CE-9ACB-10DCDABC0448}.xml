@@ -7,17 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb</Output>
+      <Output>C:\Users\kristoffer.franzon\Desktop\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb</Output>
       <Time>2015-04-08T15:11:58.3204562+02:00</Time>
-    </Item>
-    <Item>
-      <Source>lil krabba spritesheet.png</Source>
-      <Name>lil krabba spritesheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\lil krabba spritesheet.xnb</Output>
-      <Time>2015-04-09T11:58:17.655295+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -26,10 +17,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\kristoffer.franzon\Desktop\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\kristoffer.franzon\Desktop\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\kristoffer.franzon\Desktop\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\kristoffer.franzon\Desktop\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
