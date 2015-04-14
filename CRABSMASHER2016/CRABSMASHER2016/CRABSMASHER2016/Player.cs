@@ -27,10 +27,10 @@ namespace game
 
         public Player()
         {
-            amount = 0.6f;
-            rollLength = 128 * 5f; // setting more exact values later
+            amount = 0.05f; // set bether value later
+            rollLength = 128 * 5f; // set more exact values later
             speed = 5;
-            position = new Vector2(50, 50); // setting bether position later
+            position = new Vector2(50, 50); // set bether position later
             isRolling = false;
             rollTimer = 0;
             rollMaxTimer = 40;
@@ -53,25 +53,27 @@ namespace game
         }
         public void Update()
         {
-            KeyboardState keyState = Keyboard.GetState();
+            newState = Keyboard.GetState();
 
             Dir[] dirs = new Dir[]
             {
-                new Dir(new Keys[]{Keys.Up, Keys.Right}, 7, new Vector2(1, -1)),
-                new Dir(new Keys[]{Keys.Up, Keys.Left}, 5, new Vector2(-1, -1)),
-                new Dir(new Keys[]{Keys.Down, Keys.Right}, 1, new Vector2(1, 1)),
-                new Dir(new Keys[]{Keys.Down, Keys.Left}, 3, new Vector2(-1, 1)),
-                new Dir(new Keys[]{Keys.Up}, 6, new Vector2(0, -1)),
-                new Dir(new Keys[]{Keys.Down}, 2, new Vector2(0, 1)),
-                new Dir(new Keys[]{Keys.Right}, 0, new Vector2(1, 0)),
-                new Dir(new Keys[]{Keys.Left}, 4, new Vector2(-1, 0))
+                new Dir(new Keys[]{Keys.W, Keys.D}, 7, new Vector2(1, -1)),
+                new Dir(new Keys[]{Keys.W, Keys.A}, 5, new Vector2(-1, -1)),
+                new Dir(new Keys[]{Keys.S, Keys.D}, 1, new Vector2(1, 1)),
+                new Dir(new Keys[]{Keys.S, Keys.A}, 3, new Vector2(-1, 1)),
+                new Dir(new Keys[]{Keys.W}, 6, new Vector2(0, -1)),
+                new Dir(new Keys[]{Keys.S}, 2, new Vector2(0, 1)),
+                new Dir(new Keys[]{Keys.D}, 0, new Vector2(1, 0)),
+                new Dir(new Keys[]{Keys.A}, 4, new Vector2(-1, 0))
             };
             foreach (Dir dir in dirs)
             {
                 bool Continue = true;
+                
                 foreach (Keys key in dir.keys)                
-                    if (!keyState.IsKeyDown(key))
+                    if (!newState.IsKeyDown(key))
                         Continue = false;
+
                 if (Continue) 
                 {
                     FrameTimer++;
@@ -80,9 +82,10 @@ namespace game
                     break;
                 }
             }
+
+            
+
             Console.WriteLine(position);
-
-
 
             #region movement
             //if (!isRolling)

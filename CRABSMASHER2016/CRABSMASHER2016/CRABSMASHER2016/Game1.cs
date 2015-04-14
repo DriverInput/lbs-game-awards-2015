@@ -35,9 +35,22 @@ namespace game
         {
             TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
+
+            for (int i = 1; i < 17; i++)            
+                TextureManager.InitializeTextures.Add(i.ToString(), "mapParts/mapPart" + i);
+            
             player = new Player();
             miniCrab = new MiniCrab();
             camera = new Camera();
+
+            
+            //Map map = MapLoader.LoadMap("");
+            //int hw = 32;
+
+            //for (int x = 0; x < map.X; x++)
+            //    for (int y = 0; y < map.Y; y++)
+            //        tiles.Add(new Tile(map[x,y].ToString(), new Rectangle(x * hw, y * hw, hw, hw )));
+
             base.Initialize();
         }
 

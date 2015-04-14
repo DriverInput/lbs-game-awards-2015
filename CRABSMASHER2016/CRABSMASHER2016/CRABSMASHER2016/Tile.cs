@@ -14,19 +14,13 @@ namespace game
     class Tile : Object
     {
         Texture2D temp;
-        int tag;
-        int wh;
 
-        public Tile(int newTag , Vector2 newPosition, int newWh)
+        public Tile(string newTextureId , Rectangle newRectangle)
         {
-            tag = newTag;
-            position = newPosition;
-            wh = newWh;
-        }
-
-        public void Draw(SpriteBatch spriteBatch) 
-        {
-            spriteBatch.Draw(temp, position, Color.White);
+            textureID = newTextureId;
+            position = new Vector2(newRectangle.X, newRectangle.Y);
+            width = newRectangle.Width;
+            height = newRectangle.Height;
         }
     }
 }

@@ -91,8 +91,8 @@ namespace game
         {
             float dw = 0.5f * (w1 + w2);
             float dh = 0.5f * (h1 + h2);
-            float dx = (x1) - (x2 + w2 / 2);
-            float dy = (y1) - (y2 + h2 / 2);
+            float dx = (x1 + (w1 / 2)) - (x2 + (w2 / 2));
+            float dy = (y1 + (w1 / 2)) - (y2 + (h2 / 2));
 
             if (Math.Abs(dx) <= dw && Math.Abs(dy) <= dh)
             {
@@ -103,12 +103,12 @@ namespace game
                 {
                     if (wy > -hx)
                     {
+                        //top
                         y1 = y2 + h2;
-
                     }
                     else
                     {
-
+                        //left
                         x1 = x2 - w1;
                     }
                 }
@@ -116,11 +116,16 @@ namespace game
                 {
                     if (wy > -hx)
                     {
+                        //right
                         x1 = x2 + w2;
                     }
                     else
                     {
-                        y1 = y2 - h1;
+                        //bottom
+                        if (y1 >= y2 - h1)
+                        {
+                            y1 = y2 - h1;
+                        }
                     }
                 }
             }

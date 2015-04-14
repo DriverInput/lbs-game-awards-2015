@@ -1,3 +1,4 @@
 C:\Users\kristoffer.franzon\Desktop\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\obj\x86\Debug\CRABSMASHER2016Content.contentprojResolveAssemblyReference.cache
 C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\obj\x86\Debug\CRABSMASHER2016Content.contentprojResolveAssemblyReference.cache
 C:\Users\jessy.brodin\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\obj\x86\Debug\CRABSMASHER2016Content.contentprojResolveAssemblyReference.cache
+C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\obj\x86\Debug\CRABSMASHER2016Content.contentprojResolveAssemblyReference.cache
