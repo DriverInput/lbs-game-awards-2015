@@ -58,14 +58,14 @@ namespace game
 
             Dir[] dirs = new Dir[]
             {
-                new Dir(new Keys[]{Keys.Up, Keys.Right}, 7, new Vector2(1, -1)),
-                new Dir(new Keys[]{Keys.Up, Keys.Left}, 5, new Vector2(-1, -1)),
-                new Dir(new Keys[]{Keys.Down, Keys.Right}, 1, new Vector2(1, 1)),
-                new Dir(new Keys[]{Keys.Down, Keys.Left}, 3, new Vector2(-1, 1)),
-                new Dir(new Keys[]{Keys.Up}, 6, new Vector2(0, -1)),
-                new Dir(new Keys[]{Keys.Down}, 2, new Vector2(0, 1)),
-                new Dir(new Keys[]{Keys.Right}, 0, new Vector2(1, 0)),
-                new Dir(new Keys[]{Keys.Left}, 4, new Vector2(-1, 0))
+                new Dir(new Keys[]{Keys.W, Keys.D}, 7, new Vector2(1, -1)),
+                new Dir(new Keys[]{Keys.W, Keys.A}, 5, new Vector2(-1, -1)),
+                new Dir(new Keys[]{Keys.S, Keys.D}, 1, new Vector2(1, 1)),
+                new Dir(new Keys[]{Keys.S, Keys.A}, 3, new Vector2(-1, 1)),
+                new Dir(new Keys[]{Keys.W}, 6, new Vector2(0, -1)),
+                new Dir(new Keys[]{Keys.S}, 2, new Vector2(0, 1)),
+                new Dir(new Keys[]{Keys.D}, 0, new Vector2(1, 0)),
+                new Dir(new Keys[]{Keys.A}, 4, new Vector2(-1, 0))
             };
             foreach (Dir dir in dirs)
             {
