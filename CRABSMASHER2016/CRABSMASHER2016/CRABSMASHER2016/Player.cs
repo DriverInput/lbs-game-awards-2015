@@ -54,7 +54,6 @@ namespace game
 
         public void Update()
         {
-            KeyboardState keyState = Keyboard.GetState();
             newState = Keyboard.GetState();
 
             Dir[] dirs = new Dir[]
@@ -73,7 +72,7 @@ namespace game
                 bool Continue = true;
                 
                 foreach (Keys key in dir.keys)                
-                    if (!keyState.IsKeyDown(key))
+                    if (!newState.IsKeyDown(key))
                         Continue = false;
 
                 if (Continue) 
