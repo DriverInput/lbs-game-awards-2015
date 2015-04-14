@@ -27,10 +27,10 @@ namespace game
 
         public Player()
         {
-            amount = 0.6f;
-            rollLength = 128 * 5f; // setting more exact values later
+            amount = 0.05f; // set bether value later
+            rollLength = 128 * 5f; // set more exact values later
             speed = 5;
-            position = new Vector2(50, 50); // setting bether position later
+            position = new Vector2(50, 50); // set bether position later
             isRolling = false;
             rollTimer = 0;
             rollMaxTimer = 40;
@@ -55,6 +55,7 @@ namespace game
         public void Update()
         {
             KeyboardState keyState = Keyboard.GetState();
+            newState = Keyboard.GetState();
 
             Dir[] dirs = new Dir[]
             {
@@ -70,9 +71,11 @@ namespace game
             foreach (Dir dir in dirs)
             {
                 bool Continue = true;
+                
                 foreach (Keys key in dir.keys)                
                     if (!keyState.IsKeyDown(key))
                         Continue = false;
+
                 if (Continue) 
                 {
                     FrameTimer++;
@@ -81,9 +84,10 @@ namespace game
                     break;
                 }
             }
+
+            
+
             Console.WriteLine(position);
-
-
 
             #region movement
             //if (!isRolling)
