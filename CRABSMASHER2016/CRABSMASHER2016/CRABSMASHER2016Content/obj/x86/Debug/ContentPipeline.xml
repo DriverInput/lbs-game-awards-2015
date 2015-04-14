@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jessy.brodin\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb</Output>
-      <Time>2015-04-09T11:46:35.6970825+02:00</Time>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb</Output>
+      <Time>2015-04-09T10:00:28.2380975+02:00</Time>
     </Item>
     <Item>
       <Source>lil krabba spritesheet.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\jessy.brodin\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\lil krabba spritesheet.xnb</Output>
-      <Time>2015-04-09T11:46:35.6510779+02:00</Time>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\lil krabba spritesheet.xnb</Output>
+      <Time>2015-04-09T11:04:43.7738605+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -25,39 +25,39 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\jessy.brodin\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\jessy.brodin\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\jessy.brodin\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\jessy.brodin\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T13:41:18+02:00</Value>
+        <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-03-04T18:06:27.3686948+01:00</Value>
+        <Value>2014-10-20T10:49:04.5493229+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
