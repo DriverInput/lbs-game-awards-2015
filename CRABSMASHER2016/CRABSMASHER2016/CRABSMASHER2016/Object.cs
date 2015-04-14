@@ -103,10 +103,12 @@ namespace game
                 {
                     if (wy > -hx)
                     {
-                        y1 = y2 + h2;
+                        //top
+                        y1 = y2 + h2;     
                     }
                     else
                     {
+                        //left
                         x1 = x2 - w1;
                     }
                 }
@@ -114,10 +116,12 @@ namespace game
                 {
                     if (wy > -hx)
                     {
+                        //right
                         x1 = x2 + w2;
                     }
                     else
                     {
+                        //bottom   
                         y1 = y2 - h1;
                     }
                 }
