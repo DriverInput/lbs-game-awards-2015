@@ -43,14 +43,14 @@ namespace game
             miniCrab = new MiniCrab();
             camera = new Camera();
 
+
+            Map map = MapLoader.LoadMap("");
+            int hw = 32;
+
+            for (int x = 0; x < map.X; x++)
+                for (int y = 0; y < map.Y; y++)
+                    tiles.Add(new Tile(map[x, y].ToString(), new Rectangle(x * hw, y * hw, hw, hw)));
             
-            //Map map = MapLoader.LoadMap("");
-            //int hw = 32;
-
-            //for (int x = 0; x < map.X; x++)
-            //    for (int y = 0; y < map.Y; y++)
-            //        tiles.Add(new Tile(map[x,y].ToString(), new Rectangle(x * hw, y * hw, hw, hw )));
-
             base.Initialize();
         }
 
