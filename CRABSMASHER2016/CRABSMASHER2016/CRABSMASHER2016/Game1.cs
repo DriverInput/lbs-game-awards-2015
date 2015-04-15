@@ -16,7 +16,6 @@ namespace game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Map map;
         Player player;
         MiniCrab miniCrab;
         Camera camera;

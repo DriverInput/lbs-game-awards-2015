@@ -51,7 +51,6 @@ namespace game
                 this.VecDir = VecDir;
             }
         }
-
         public void Update()
         {
             newState = Keyboard.GetState();
