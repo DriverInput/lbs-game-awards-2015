@@ -20,6 +20,8 @@ namespace game
         MiniCrab miniCrab;
         Camera camera;
 
+        readonly private const int test = 5;
+
         List<Tile> tiles = new List<Tile>();
 
         public Main()
