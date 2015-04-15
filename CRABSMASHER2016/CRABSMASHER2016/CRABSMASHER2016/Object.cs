@@ -122,10 +122,7 @@ namespace game
                     else
                     {
                         //bottom
-                        if (y1 >= y2 - h1)
-                        {
-                            y1 = y2 - h1;
-                        }
+                        y1 = y2 - h1+30;
                     }
                 }
             }
