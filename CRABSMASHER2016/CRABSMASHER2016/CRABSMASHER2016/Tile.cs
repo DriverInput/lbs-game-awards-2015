@@ -15,7 +15,7 @@ namespace game
     {
         Texture2D temp;
 
-        public Tile(string newTextureId , Rectangle newRectangle)
+        public Tile(string newTextureId, Rectangle newRectangle)
         {
             textureID = newTextureId;
             position = new Vector2(newRectangle.X, newRectangle.Y);

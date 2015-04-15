@@ -22,6 +22,7 @@ namespace game
             angle = 0;
             position = new Vector2(25, 25); // more exact values later
             speed = 2;
+            maxFrameTimer = 5;
             velocity = new Vector2();
             textureID = "minicrab";
         }

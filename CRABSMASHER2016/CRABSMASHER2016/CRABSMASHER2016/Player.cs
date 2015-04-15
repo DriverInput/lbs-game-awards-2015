@@ -29,9 +29,10 @@ namespace game
         {
             amount = 0.05f; // set bether value later
             rollLength = 128 * 5f; // set more exact values later
-            speed = 5;
+            speed = 7;
             position = new Vector2(50, 50); // set bether position later
             isRolling = false;
+            maxFrameTimer = 3;
             rollTimer = 0;
             rollMaxTimer = 40;
             width = 146;
@@ -78,12 +79,11 @@ namespace game
                 {
                     FrameTimer++;
                     this.dir = dir.dir;
+                    dir.VecDir.Normalize();
                     position += dir.VecDir * speed;
                     break;
                 }
             }
-
-            
 
             Console.WriteLine(position);
 

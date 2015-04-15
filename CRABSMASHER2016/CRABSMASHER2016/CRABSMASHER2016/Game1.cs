@@ -42,13 +42,14 @@ namespace game
             miniCrab = new MiniCrab();
             camera = new Camera();
 
-
-            Map map = MapLoader.LoadMap("");
-            int hw = 32;
+            Map map = MapLoader.LoadMap("map.txt");
+            int hw = 64;
 
             for (int x = 0; x < map.X; x++)
                 for (int y = 0; y < map.Y; y++)
-                    tiles.Add(new Tile(map[x, y].ToString(), new Rectangle(x * hw, y * hw, hw, hw)));
+                    if (map[x,y] != 0)
+                        tiles.Add(new Tile(map[x, y].ToString(), new Rectangle(x * hw, y * hw, 1024, 1024)));
+                
             
             base.Initialize();
         }
@@ -78,7 +79,11 @@ namespace game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null,null,null,null,camera.get_transformation(GraphicsDevice));
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null,null,null,null,camera.get_transformation(GraphicsDevice));
+            foreach (Tile tile in tiles)
+            {
+                tile.Draw(spriteBatch);
+            }
             player.Draw(spriteBatch);
             miniCrab.Draw(spriteBatch);
             spriteBatch.End();

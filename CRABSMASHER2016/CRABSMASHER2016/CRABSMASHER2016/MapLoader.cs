@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 
-namespace Czaplicki.Utility
+namespace game
 {
     class Map
     {

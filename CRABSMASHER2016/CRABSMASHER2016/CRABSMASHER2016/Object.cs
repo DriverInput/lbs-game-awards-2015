@@ -77,7 +77,7 @@ namespace game
             }
         }
 
-        public int maxFrameTimer = 5;
+        public int maxFrameTimer;
 
         public int maxFrame { get { return (TextureManager.Textures[textureID].Width / width) - 1; } }
         public int maxAnimation { get { return (TextureManager.Textures[textureID].Height / height) - 1; } }
