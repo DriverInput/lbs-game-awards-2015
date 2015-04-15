@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace game
+namespace Game
 {
     class Player : Object
     {
@@ -23,10 +23,17 @@ namespace game
         int rollTimer;
         int rollMaxTimer;
 
+        Dir[] dirs;
+
+        Cooldown cooldown_Attack;
+        Cooldown cooldown_frame;
+
         bool isRolling;
 
         public Player()
         {
+            cooldown_Attack = new Cooldown(60,1);
+
             amount = 0.05f; // set bether value later
             rollLength = 128 * 5f; // set more exact values later
             speed = 7;
@@ -38,8 +45,107 @@ namespace game
             width = 146;
             height = 209;
             textureID = "player";
+            #region Movment keys
+            dirs = new Dir[]
+                {   
+                    new Dir(new Keys[]{Keys.I, Keys.L}, 7, new Vector2(1, -1)),
+                    new Dir(new Keys[]{Keys.I, Keys.J}, 5, new Vector2(-1, -1)),
+                    new Dir(new Keys[]{Keys.K, Keys.L}, 1, new Vector2(1, 1)),
+                    new Dir(new Keys[]{Keys.K, Keys.J}, 3, new Vector2(-1, 1)),
+                    new Dir(new Keys[]{Keys.I}, 6, new Vector2(0, -1)),
+                    new Dir(new Keys[]{Keys.K}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.L}, 0, new Vector2(1, 0)),
+                    new Dir(new Keys[]{Keys.J}, 4, new Vector2(-1, 0)),
+
+                    new Dir(new Keys[]{Keys.NumPad8, Keys.NumPad6}, 7, new Vector2(1, -1)),
+                    new Dir(new Keys[]{Keys.NumPad8, Keys.NumPad4}, 5, new Vector2(-1, -1)),
+                    new Dir(new Keys[]{Keys.NumPad2, Keys.NumPad6}, 1, new Vector2(1, 1)),
+                    new Dir(new Keys[]{Keys.NumPad2, Keys.NumPad4}, 3, new Vector2(-1, 1)),
+                    new Dir(new Keys[]{Keys.NumPad8}, 6, new Vector2(0, -1)),
+                    new Dir(new Keys[]{Keys.NumPad2}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.NumPad6}, 0, new Vector2(1, 0)),
+                    new Dir(new Keys[]{Keys.NumPad4}, 4, new Vector2(-1, 0)),
+
+                    new Dir(new Keys[]{Keys.Up, Keys.Right}, 7, new Vector2(1, -1)),
+                    new Dir(new Keys[]{Keys.Up, Keys.Left}, 5, new Vector2(-1, -1)),
+                    new Dir(new Keys[]{Keys.Down, Keys.Right}, 1, new Vector2(1, 1)),
+                    new Dir(new Keys[]{Keys.Down, Keys.Left}, 3, new Vector2(-1, 1)),
+                    new Dir(new Keys[]{Keys.Up}, 6, new Vector2(0, -1)),
+                    new Dir(new Keys[]{Keys.Down}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.Right}, 0, new Vector2(1, 0)),
+                    new Dir(new Keys[]{Keys.Left}, 4, new Vector2(-1, 0)),
+
+                    new Dir(new Keys[]{Keys.W, Keys.D}, 7, new Vector2(1, -1)),
+                    new Dir(new Keys[]{Keys.W, Keys.A}, 5, new Vector2(-1, -1)),
+                    new Dir(new Keys[]{Keys.S, Keys.D}, 1, new Vector2(1, 1)),
+                    new Dir(new Keys[]{Keys.S, Keys.A}, 3, new Vector2(-1, 1)),
+                    new Dir(new Keys[]{Keys.W}, 6, new Vector2(0, -1)),
+                    new Dir(new Keys[]{Keys.S}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.D}, 0, new Vector2(1, 0)),
+                    new Dir(new Keys[]{Keys.A}, 4, new Vector2(-1, 0))
+                };
+            #endregion
+        }
+        public void Update()
+        {
+            newState = Keyboard.GetState();
+
+            Keys[] AttackKeys = new Keys[]
+            { Keys.Enter, Keys.Escape, Keys.NumPad9 , Keys.E};
+
+
+
+
+            #region movement
+            //Movement 
+                foreach (Dir dir in dirs)
+                {
+                    bool Continue = true;
+
+                    foreach (Keys key in dir.keys)
+                        if (!newState.IsKeyDown(key))
+                            Continue = false;
+
+                    if (Continue)
+                    {
+                        FrameTimer++;
+                        this.dir = dir.dir;
+                        dir.VecDir.Normalize();
+                        position += dir.VecDir * speed;
+                        break;
+                    }
+                }
+
+                Console.WriteLine(position);               
+
+                currentAnimation = this.dir;
+
+                if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && isRolling == false)
+                {
+                    isRolling = true;
+                    dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
+                    dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength;
+                }
+
+                if (isRolling)
+                {
+                    rollTimer++;
+                    position.X = MathHelper.Lerp(position.X, dx, amount);
+                    position.Y = MathHelper.Lerp(position.Y, dy, amount);
+                }
+
+                if (rollTimer == rollMaxTimer)
+                {
+                    rollTimer = 0;
+                    isRolling = false;
+                }
+                #endregion
+
+                oldState = newState;
+            
 
         }
+
         public class Dir
         {
             public Vector2 VecDir;
@@ -52,125 +158,6 @@ namespace game
                 this.VecDir = VecDir;
             }
         }
-        public void Update()
-        {
-            newState = Keyboard.GetState();
-
-            Dir[] dirs = new Dir[]
-            {
-                new Dir(new Keys[]{Keys.W, Keys.D}, 7, new Vector2(1, -1)),
-                new Dir(new Keys[]{Keys.W, Keys.A}, 5, new Vector2(-1, -1)),
-                new Dir(new Keys[]{Keys.S, Keys.D}, 1, new Vector2(1, 1)),
-                new Dir(new Keys[]{Keys.S, Keys.A}, 3, new Vector2(-1, 1)),
-                new Dir(new Keys[]{Keys.W}, 6, new Vector2(0, -1)),
-                new Dir(new Keys[]{Keys.S}, 2, new Vector2(0, 1)),
-                new Dir(new Keys[]{Keys.D}, 0, new Vector2(1, 0)),
-                new Dir(new Keys[]{Keys.A}, 4, new Vector2(-1, 0))
-            };
-            foreach (Dir dir in dirs)
-            {
-                bool Continue = true;
-                
-                foreach (Keys key in dir.keys)                
-                    if (!newState.IsKeyDown(key))
-                        Continue = false;
-
-                if (Continue) 
-                {
-                    FrameTimer++;
-                    this.dir = dir.dir;
-                    dir.VecDir.Normalize();
-                    position += dir.VecDir * speed;
-                    break;
-                }
-            }
-
-            Console.WriteLine(position);
-
-            #region movement
-            //if (!isRolling)
-            //{
-            //    if (Keyboard.GetState().IsKeyDown(Keys.W))
-            //    {
-            //        dir = 6;
-            //        FrameTimer++;
-            //        position.Y -= speed;
-            //    }
-            //    if (Keyboard.GetState().IsKeyDown(Keys.D))
-            //    {
-            //        if (Keyboard.GetState().IsKeyDown(Keys.W))
-            //        {
-            //            dir = 7;
-            //            FrameTimer++;
-            //        }
-            //        else
-            //        {
-            //            dir = 0;
-            //            FrameTimer++;
-            //        }
-            //        position.X += speed;
-            //    }
-            //    if (Keyboard.GetState().IsKeyDown(Keys.S))
-            //    {
-            //        if (Keyboard.GetState().IsKeyDown(Keys.D))
-            //        {
-            //            dir = 1;
-            //            FrameTimer++;
-            //        }
-            //        else
-            //        {
-            //            dir = 2;
-            //            FrameTimer++;
-            //        }
-            //        position.Y += speed;
-            //    }
-            //    if (Keyboard.GetState().IsKeyDown(Keys.A))
-            //    {
-            //        if (Keyboard.GetState().IsKeyDown(Keys.S))
-            //        {
-            //            dir = 3;
-            //            FrameTimer++;
-            //        }
-            //        else
-            //        {
-            //            dir = 4;
-            //            FrameTimer++;
-            //        }
-            //        position.X -= speed;
-            //    }
-            //    if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W))
-            //    {
-            //        dir = 5;
-            //        FrameTimer++;
-            //    }
-            //}
-
-            #endregion
-
-            currentAnimation = this.dir;
-
-            if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && isRolling == false)
-            {
-                isRolling = true;
-                dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
-                dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength;
-            }
-
-            if (isRolling)
-            {
-                rollTimer++;
-                position.X = MathHelper.Lerp(position.X, dx, amount);
-                position.Y = MathHelper.Lerp(position.Y, dy, amount);
-            }
-
-            if (rollTimer == rollMaxTimer)
-            {
-                rollTimer = 0;
-                isRolling = false;
-            }
-
-            oldState = newState;
-
-        }
     }
+
 }
