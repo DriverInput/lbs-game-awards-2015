@@ -88,16 +88,25 @@ namespace Game
         }
         public void Update()
         {
+            cooldown_Attack.Update();
+
             newState = Keyboard.GetState();
 
             Keys[] AttackKeys = new Keys[]
-            { Keys.Enter, Keys.Escape, Keys.NumPad9 , Keys.E};
+            { Keys.Enter, Keys.Escape, Keys.NumPad9 , Keys.E };
+
+            foreach (Keys key in AttackKeys)
+                if (newState.IsKeyDown(key))
+                {
+                    cooldown_Attack.Use();
+
+                }
 
 
-
-
-            #region movement
-            //Movement 
+            if (cooldown_Attack.Output())
+            {
+                #region movement
+                //Movement 
                 foreach (Dir dir in dirs)
                 {
                     bool Continue = true;
@@ -116,7 +125,7 @@ namespace Game
                     }
                 }
 
-                Console.WriteLine(position);               
+                Console.WriteLine(position);
 
                 currentAnimation = this.dir;
 
@@ -139,6 +148,7 @@ namespace Game
                     rollTimer = 0;
                     isRolling = false;
                 }
+            }
                 #endregion
 
                 oldState = newState;
