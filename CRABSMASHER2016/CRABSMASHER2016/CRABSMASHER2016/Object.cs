@@ -108,7 +108,6 @@ namespace Game
                         {
                             y1 = y2 + h2;
                         }
-                        //y1 = y2 + h2;
                     }
                     else
                     {
