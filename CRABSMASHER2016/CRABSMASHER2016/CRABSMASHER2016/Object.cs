@@ -103,7 +103,7 @@ namespace Game
                 {
                     if (wy > -hx)
                     {
-                        //top
+                        //bottom
                         if (y1 <= y2 + h2)
                         {
                             y1 = y2 + h2;
@@ -125,7 +125,7 @@ namespace Game
                     }
                     else
                     {
-                        //bottom
+                        //top
                         y1 = y2 - h1 + 30;
                     }
                 }
