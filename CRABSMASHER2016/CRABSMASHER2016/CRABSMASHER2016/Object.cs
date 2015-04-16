@@ -17,7 +17,7 @@ namespace Game
         public Rectangle sourceRectangle 
         { 
             get{
-                return new Rectangle(CurrentFrame * width, currentAnimation * height, width, height);
+                return new Rectangle(CurrentFrame * width, (currentAnimation) * height, width, height);
             }
         }
         public int width;

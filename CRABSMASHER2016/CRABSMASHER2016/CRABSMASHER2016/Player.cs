@@ -132,6 +132,7 @@ namespace Game
                 if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && isRolling == false)
                 {
                     isRolling = true;
+                    CurrentFrame = 0;
                     dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength;
                 }
@@ -141,6 +142,7 @@ namespace Game
                     rollTimer++;
                     position.X = MathHelper.Lerp(position.X, dx, amount);
                     position.Y = MathHelper.Lerp(position.Y, dy, amount);
+                    currentAnimation = this.dir + 8;
                 }
 
                 if (rollTimer == rollMaxTimer)
@@ -156,7 +158,7 @@ namespace Game
 
         }
 
-        public class Dir
+        private struct Dir
         {
             public Vector2 VecDir;
             public Keys[] keys;
