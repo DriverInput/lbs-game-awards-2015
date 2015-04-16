@@ -32,7 +32,7 @@ namespace Game
 
         public Player()
         {
-            cooldown_DisableControls = new Cooldown(60,1);
+            cooldown_DisableControls = new Cooldown(25,1);
 
             amount = 0.05f; // set bether value later
             rollLength = 128 * 5f; // set more exact values later
@@ -41,7 +41,7 @@ namespace Game
             isRolling = false;
             maxFrameTimer = 3;
             rollTimer = 0;
-            rollMaxTimer = 29;
+            rollMaxTimer = 25;
             width = 146;
             height = 209;
             textureID = "player";
