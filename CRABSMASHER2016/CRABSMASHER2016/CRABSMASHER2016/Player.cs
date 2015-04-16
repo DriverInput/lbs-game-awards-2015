@@ -92,8 +92,7 @@ namespace Game
 
             newState = Keyboard.GetState();
 
-            Keys[] AttackKeys = new Keys[]
-            { Keys.Enter, Keys.Escape, Keys.NumPad9 , Keys.E };
+            Keys[] AttackKeys = new Keys[] { Keys.Enter, Keys.Escape, Keys.NumPad9, Keys.E };
 
             foreach (Keys key in AttackKeys)
                 if (newState.IsKeyDown(key))
@@ -121,6 +120,7 @@ namespace Game
                         this.dir = dir.dir;
                         dir.VecDir.Normalize();
                         position += dir.VecDir * speed;
+                        
                         break;
                     }
                 }
@@ -153,8 +153,8 @@ namespace Game
             }
                 #endregion
 
-                oldState = newState;
-            
+            oldState = newState;
+
 
         }
 
