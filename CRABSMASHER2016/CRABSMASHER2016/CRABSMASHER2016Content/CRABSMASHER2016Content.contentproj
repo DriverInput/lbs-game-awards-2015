@@ -37,13 +37,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="lil krabba spritesheet.png">
-      <Name>lil krabba spritesheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="mapParts\mapPart1.png">
       <Name>mapPart1</Name>
       <Importer>TextureImporter</Importer>
@@ -121,6 +114,13 @@
     </Compile>
     <Compile Include="mapParts\mapPart9.png">
       <Name>mapPart9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="lil krabba spritesheet.png">
+      <Name>lil krabba spritesheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
