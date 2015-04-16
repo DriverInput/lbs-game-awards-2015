@@ -25,14 +25,14 @@ namespace Game
 
         Dir[] dirs;
 
-        Cooldown cooldown_Attack;
-        Cooldown cooldown_frame;
+        Cooldown cooldown_DisableControls;
+        //Cooldown cooldown_frame;
 
         bool isRolling;
 
         public Player()
         {
-            cooldown_Attack = new Cooldown(60,1);
+            cooldown_DisableControls = new Cooldown(60,1);
 
             amount = 0.05f; // set bether value later
             rollLength = 128 * 5f; // set more exact values later
@@ -41,7 +41,7 @@ namespace Game
             isRolling = false;
             maxFrameTimer = 3;
             rollTimer = 0;
-            rollMaxTimer = 40;
+            rollMaxTimer = 29;
             width = 146;
             height = 209;
             textureID = "player";
@@ -88,21 +88,21 @@ namespace Game
         }
         public void Update()
         {
-            cooldown_Attack.Update();
+            cooldown_DisableControls.Update();
 
             newState = Keyboard.GetState();
 
-            Keys[] AttackKeys = new Keys[] { Keys.Enter, Keys.Escape, Keys.NumPad9, Keys.E };
+            //Keys[] AttackKeys = new Keys[] { Keys.Enter, Keys.Escape, Keys.NumPad9, Keys.E };
 
-            foreach (Keys key in AttackKeys)
-                if (newState.IsKeyDown(key))
-                {
-                    cooldown_Attack.Use();
+            //foreach (Keys key in AttackKeys)
+            //    if (newState.IsKeyDown(key))
+            //    {
+            //        cooldown_DisableControls.Use();
 
-                }
+            //    }
 
 
-            if (cooldown_Attack.Output())
+            if (cooldown_DisableControls.Output())
             {
                 #region movement
                 //Movement 
@@ -120,7 +120,7 @@ namespace Game
                         this.dir = dir.dir;
                         dir.VecDir.Normalize();
                         position += dir.VecDir * speed;
-                        
+
                         break;
                     }
                 }
@@ -131,15 +131,17 @@ namespace Game
 
                 if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && isRolling == false)
                 {
+                    cooldown_DisableControls.Use();
                     isRolling = true;
                     CurrentFrame = 0;
                     dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength;
                 }
-
+            }
                 if (isRolling)
                 {
                     rollTimer++;
+                    FrameTimer++;
                     position.X = MathHelper.Lerp(position.X, dx, amount);
                     position.Y = MathHelper.Lerp(position.Y, dy, amount);
                     currentAnimation = this.dir + 8;
@@ -150,7 +152,7 @@ namespace Game
                     rollTimer = 0;
                     isRolling = false;
                 }
-            }
+            
                 #endregion
 
             oldState = newState;
