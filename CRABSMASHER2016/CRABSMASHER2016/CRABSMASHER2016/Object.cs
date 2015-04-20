@@ -132,5 +132,48 @@ namespace Game
 
             return new Vector2(x1, y1);
         }
+
+        public static Vector2 RectangleToRectangle(Rectangle A, Rectangle B)
+        {
+            float dw = 0.5f * (A.Width + B.Width);
+            float dh = 0.5f * (A.Height + B.Height);
+            float dx = A.Center.X - B.Center.X;
+            float dy = A.Center.Y - B.Center.Y;
+
+            if (Math.Abs(dx) <= dw && Math.Abs(dy) <= dh)
+            {
+                float wy = dw * dy;
+                float hx = dh * dx;
+
+                if (wy > hx)
+                {
+                    if (wy > -hx)
+                    {
+                        //bottom
+                        A.Y = B.Y + B.Height;
+                    }
+                    else
+                    {
+                        //left
+                        A.X = B.X - A.Width;
+                    }
+                }
+                else
+                {
+                    if (wy > -hx)
+                    {
+                        //right
+                        A.X = B.X + B.Width;
+                    }
+                    else
+                    {
+                        //top
+                        A.Y = B.Y - A.Height;
+                    }
+                }
+            }
+
+            return new Vector2(A.X, A.Y);
+        }
     }
 }
