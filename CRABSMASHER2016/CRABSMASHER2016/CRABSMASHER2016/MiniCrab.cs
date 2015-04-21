@@ -22,18 +22,19 @@ namespace Game
             angle = 0;
             position = new Vector2(25, 25); // more exact values later
             speed = 2;
-            maxFrameTimer = 5;
+            maxFrameTimer = 8;
             velocity = new Vector2();
             textureID = "minicrab";
         }
 
         public void Update(Player player) 
         {
-            targetAngle = (float)Math.Atan2((player.position.Y + player.height / 2) - (position.Y + height / 2), (player.position.X + player.width / 2) - (position.X + width / 2));
+            targetAngle = (float)Math.Atan2((player.position.Y + player.height * 0.5f) - (position.Y + height * 0.5f), (player.position.X + player.width * 0.5f) - (position.X + width * 0.5f));
             velocity = Converter.Float.CosSin(targetAngle) * speed;
             position += velocity;
 
-            player.position = RectangleToRectangle(player.rectangle, this.rectangle);// RectangleToRectangle(player.position.X, player.position.Y, player.width, player.height, position.X, position.Y, width, height);
+            Rectangle playerOffSetRectangle = new Rectangle(player.rectangle.X, player.rectangle.Y + 100, player.rectangle.Width, player.rectangle.Height - 100);
+            player.position = RectangleToRectangle(playerOffSetRectangle, this.rectangle);// RectangleToRectangle(player.position.X, player.position.Y, player.width, player.height, position.X, position.Y, width, height);
 
             FrameTimer++;
         }

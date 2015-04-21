@@ -19,6 +19,7 @@ namespace Game
         Player player;
         MiniCrab miniCrab;
         Camera camera;
+        CrabKing crabKing;
 
         private const int test = 5;
 
@@ -36,12 +37,21 @@ namespace Game
         {
             TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
+            TextureManager.InitializeTextures.Add("CrabKing", "CrabKing");
+            TextureManager.InitializeTextures.Add("CrabArm", "CrabArm");
+            TextureManager.InitializeTextures.Add("bar", "bar");
+            TextureManager.InitializeTextures.Add("hp", "hp");
+            TextureManager.InitializeTextures.Add("stamina", "stamina");
+            TextureManager.InitializeTextures.Add("bord", "bord");
 
             for (int i = 1; i < 17; i++)            
                 TextureManager.InitializeTextures.Add(i.ToString(), "mapParts/mapPart" + i);
-            
+            //JAG HAR SYNDAT! SORRY JESS!
+            TextureManager.LoadContent(Content);
+
             player = new Player();
             miniCrab = new MiniCrab();
+            crabKing = new CrabKing();
             camera = new Camera();
 
             Map map = MapLoader.LoadMap("map.txt");
@@ -59,7 +69,7 @@ namespace Game
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            TextureManager.LoadContent(Content);
+            
         }
 
         protected override void UnloadContent()
@@ -74,7 +84,7 @@ namespace Game
             player.Update();
             miniCrab.Update(player);
             camera.Pos = player.position + new Vector2(player.width/2, player.height/2);
-
+            crabKing.Update(player);
             base.Update(gameTime);
         }
 
@@ -86,9 +96,22 @@ namespace Game
             {
                 tile.Draw(spriteBatch);
             }
-            player.Draw(spriteBatch);
             miniCrab.Draw(spriteBatch);
+            player.Draw(spriteBatch);
+            crabKing.Draw(spriteBatch);
+            crabKing.leftArm.Draw(spriteBatch);
+            crabKing.rigthArm.Draw(spriteBatch);
             spriteBatch.End();
+
+            spriteBatch.Begin();
+            player.bar.Draw(spriteBatch);
+            spriteBatch.End();
+
+            //Console debuging
+            Console.Clear();
+            Console.WriteLine(player.position);
+            Console.WriteLine(gameTime.IsRunningSlowly);
+
             base.Draw(gameTime);
         }
     }

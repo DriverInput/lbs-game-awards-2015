@@ -17,11 +17,18 @@ namespace Game
         public float rollLength;
         public int dir = 0;
 
+        public StatsBar bar;
+
         float dx;
         float dy;
         float amount;
         int rollTimer;
         int rollMaxTimer;
+
+        const float maxHp = 100;
+        float hp = maxHp;
+        const float maxStamina = 100;
+        float stamina = maxStamina;
 
         Dir[] dirs;
 
@@ -32,19 +39,20 @@ namespace Game
 
         public Player()
         {
-            cooldown_DisableControls = new Cooldown(25,1);
+            cooldown_DisableControls = new Cooldown(25, 1);
 
-            amount = 0.05f; // set bether value later
-            rollLength = 128 * 5f; // set more exact values later
+            amount = 0.08f; // set bether value later
+            rollLength = 128 * 4f; // set more exact values later
             speed = 7;
             position = new Vector2(50, 50); // set bether position later
             isRolling = false;
             maxFrameTimer = 4;
             rollTimer = 0;
-            rollMaxTimer = 25;
+            rollMaxTimer = 25+6;
             width = 146;
             height = 209;
             textureID = "player";
+            bar = new StatsBar();
             #region Movment keys
             dirs = new Dir[]
                 {   
@@ -89,12 +97,17 @@ namespace Game
         public void Update()
         {
             cooldown_DisableControls.Update();
+            bar.update(hp / maxHp, stamina / maxStamina);
 
+            hp -= 0.1F;
+            
             newState = Keyboard.GetState();
 
-            if (cooldown_DisableControls.Output())
+            #region movement
+            if (!isRolling)//(cooldown_DisableControls.Output())00
             {
-                #region movement
+                stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
+
                 //Movement 
                 foreach (Dir dir in dirs)
                 {
@@ -108,18 +121,14 @@ namespace Game
                     {
                         FrameTimer++;
                         this.dir = dir.dir;
-
                         position += Vector2.Normalize(dir.VecDir) * speed;
-
                         break;
                     }
                 }
 
-                Console.WriteLine(position);
-
                 currentAnimation = this.dir;
 
-                if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && isRolling == false)
+                if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && stamina >= rollMaxTimer)
                 {
                     cooldown_DisableControls.Use();
                     isRolling = true;
@@ -128,21 +137,23 @@ namespace Game
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength * 0.8f;
                 }
             }
-                if (isRolling)
-                {
-                    rollTimer++;
-                    FrameTimer++;
-                    position.X = MathHelper.Lerp(position.X, dx, amount);
-                    position.Y = MathHelper.Lerp(position.Y, dy, amount);
-                    currentAnimation = this.dir + 8;
-                }
 
-                if (rollTimer == rollMaxTimer)
-                {
-                    rollTimer = 0;
-                    isRolling = false;
-                }
-            
+            if (isRolling)
+            {
+                rollTimer++;
+                FrameTimer++;
+                stamina--;
+                position.X = MathHelper.Lerp(position.X, dx, amount);
+                position.Y = MathHelper.Lerp(position.Y, dy, amount);
+                currentAnimation = this.dir + 8;
+            }
+
+            if (rollTimer == rollMaxTimer)
+            {
+                rollTimer = 0;
+                isRolling = false;
+            }
+
                 #endregion
 
             oldState = newState;
