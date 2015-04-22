@@ -30,7 +30,7 @@ namespace Game
                 if (CurrentFrame == 7)
                 {
                     
-                    CurrentFrame = 0 ;
+                    CurrentFrame = 0;
                 }
             }
             else

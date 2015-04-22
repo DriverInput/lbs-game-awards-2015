@@ -17,8 +17,8 @@ namespace Game
         SpriteBatch spriteBatch;
 
         Player player;
-        MiniCrab miniCrab;
         Camera camera;
+        MiniCrab miniCrab;
         CrabKing crabKing;
 
         private const int test = 5;
@@ -46,6 +46,7 @@ namespace Game
 
             for (int i = 1; i < 17; i++)            
                 TextureManager.InitializeTextures.Add(i.ToString(), "mapParts/mapPart" + i);
+
             //JAG HAR SYNDAT! SORRY JESS!
             TextureManager.LoadContent(Content);
 
@@ -62,18 +63,12 @@ namespace Game
                     if (map[x,y] != 0)
                         tiles.Add(new Tile(map[x, y].ToString(), new Rectangle(x * hw, y * hw, 1024, 1024)));
                 
-            
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
-        }
-
-        protected override void UnloadContent()
-        {
         }
 
         protected override void Update(GameTime gameTime)
