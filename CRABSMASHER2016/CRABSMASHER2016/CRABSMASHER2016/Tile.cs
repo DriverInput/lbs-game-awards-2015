@@ -13,8 +13,6 @@ namespace Game
 {
     class Tile : Object
     {
-        Texture2D temp;
-
         public Tile(string newTextureId, Rectangle newRectangle)
         {
             textureID = newTextureId;

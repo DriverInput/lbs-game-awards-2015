@@ -82,6 +82,8 @@
     <Compile Include="CollisionBox.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Cooldown.cs" />
+    <Compile Include="CrabArm.cs" />
+    <Compile Include="CrabKing.cs" />
     <Compile Include="MapLoader.cs" />
     <Compile Include="MiniCrab.cs" />
     <Compile Include="Object.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Rockbose.cs" />
+    <Compile Include="StatsBar.cs" />
     <Compile Include="TextureManager.cs" />
     <Compile Include="Tile.cs" />
   </ItemGroup>

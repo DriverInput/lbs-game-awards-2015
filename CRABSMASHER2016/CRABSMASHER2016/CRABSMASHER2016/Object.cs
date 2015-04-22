@@ -14,7 +14,7 @@ namespace Game
     class Object
     {
         public Vector2 position;
-        public Rectangle sourceRectangle 
+        public Rectangle sourceRectangle
         { 
             get{
                 return new Rectangle(CurrentFrame * width, (currentAnimation) * height, width, height);
@@ -39,6 +39,10 @@ namespace Game
             get
             {
                 return new Rectangle((int)position.X, (int)position.Y, width, height);
+            }
+            set
+            {
+                rectangle = value;
             }
         }
 
@@ -81,11 +85,13 @@ namespace Game
 
         public int maxFrame { get { return (TextureManager.Textures[textureID].Width / width) - 1; } }
         public int maxAnimation { get { return (TextureManager.Textures[textureID].Height / height) - 1; } }
-        
+
+        public SpriteEffects spriteEffect = SpriteEffects.None;
+
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(TextureManager.Textures[textureID], rectangle, sourceRectangle, Color.White, angle + angleOffset, origin, SpriteEffects.None, 1f);
-        }   
+            sb.Draw(TextureManager.Textures[textureID], rectangle, sourceRectangle, Color.White, angle + angleOffset, origin, spriteEffect, 1f);
+        }
 
         public static Vector2 RectangleToRectangle(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2)
         {
@@ -132,7 +138,6 @@ namespace Game
 
             return new Vector2(x1, y1);
         }
-
         public static Vector2 RectangleToRectangle(Rectangle A, Rectangle B)
         {
             float dw = 0.5f * (A.Width + B.Width);
@@ -173,7 +178,49 @@ namespace Game
                 }
             }
 
-            return new Vector2(A.X, A.Y);
+            return new Vector2(A.X, A.Y - 100);
+        }
+        public static Vector2 RectangleToRectangle(Rectangle A, int AxOffSet, int AyOffset, Rectangle B)
+        {
+            float dw = 0.5f * (A.Width + B.Width);
+            float dh = 0.5f * (A.Height + B.Height);
+            float dx = (A.Center.X + AxOffSet) - B.Center.X;
+            float dy = (A.Center.Y + AyOffset) - B.Center.Y;
+
+            if (Math.Abs(dx) <= dw && Math.Abs(dy) <= dh)
+            {
+                float wy = dw * dy;
+                float hx = dh * dx;
+
+                if (wy > hx)
+                {
+                    if (wy > -hx)
+                    {
+                        //bottom
+                        A.Y = B.Y + B.Height;
+                    }
+                    else
+                    {
+                        //left
+                        A.X = B.X - A.Width;
+                    }
+                }
+                else
+                {
+                    if (wy > -hx)
+                    {
+                        //right
+                        A.X = B.X + B.Width;
+                    }
+                    else
+                    {
+                        //top
+                        A.Y = B.Y - A.Height;
+                    }
+                }
+            }
+
+            return new Vector2(A.X - AxOffSet, A.Y - AyOffset);
         }
     }
 }

@@ -11,15 +11,6 @@
       <Time>2015-04-08T15:11:58.3204562+02:00</Time>
     </Item>
     <Item>
-      <Source>lil krabba spritesheet.png</Source>
-      <Name>lil krabba spritesheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\lil krabba spritesheet.xnb</Output>
-      <Time>2015-04-16T15:22:58.7031858+02:00</Time>
-    </Item>
-    <Item>
       <Source>mapParts\mapPart1.png</Source>
       <Name>mapParts\mapPart1</Name>
       <Importer>TextureImporter</Importer>
@@ -162,6 +153,69 @@
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\mapPart9.xnb</Output>
       <Time>2015-04-14T15:27:44.2374356+02:00</Time>
+    </Item>
+    <Item>
+      <Source>lil krabba spritesheet.png</Source>
+      <Name>lil krabba spritesheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\lil krabba spritesheet.xnb</Output>
+      <Time>2015-04-16T15:22:58.7031858+02:00</Time>
+    </Item>
+    <Item>
+      <Source>CrabArm.png</Source>
+      <Name>CrabArm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CrabArm.xnb</Output>
+      <Time>2015-04-21T16:06:25.1721829+02:00</Time>
+    </Item>
+    <Item>
+      <Source>CrabKing.png</Source>
+      <Name>CrabKing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CrabKing.xnb</Output>
+      <Time>2015-04-21T16:06:25.1871784+02:00</Time>
+    </Item>
+    <Item>
+      <Source>bar.png</Source>
+      <Name>bar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\bar.xnb</Output>
+      <Time>2015-04-21T18:12:39.1456334+02:00</Time>
+    </Item>
+    <Item>
+      <Source>hp.png</Source>
+      <Name>hp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\hp.xnb</Output>
+      <Time>2015-04-21T18:17:27.9681531+02:00</Time>
+    </Item>
+    <Item>
+      <Source>stamina.png</Source>
+      <Name>stamina</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stamina.xnb</Output>
+      <Time>2015-04-21T18:17:32.2083956+02:00</Time>
+    </Item>
+    <Item>
+      <Source>bord.png</Source>
+      <Name>bord</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\bord.xnb</Output>
+      <Time>2015-04-21T19:06:49.8605636+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
