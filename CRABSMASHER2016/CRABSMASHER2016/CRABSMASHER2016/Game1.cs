@@ -64,9 +64,6 @@ namespace Game
                 {
                     if (map[x, y] != 0 && map[x, y] < 17)
                         tiles.Add(new Tile(map[x, y].ToString(), new Rectangle(x * hw, y * hw, 1024, 1024)));
-<<<<<<< HEAD
-                
-=======
 
                     if (map[x,y] == 17)
                     {
@@ -74,7 +71,6 @@ namespace Game
                     }
                 }
             
->>>>>>> origin/master
             base.Initialize();
         }
 
