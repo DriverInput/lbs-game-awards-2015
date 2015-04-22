@@ -37,7 +37,7 @@ namespace Game
             amount = 0.05f; // set bether value later
             rollLength = 128 * 5f; // set more exact values later
             speed = 7;
-            position = new Vector2(50, 50); // set bether position later
+            position = new Vector2(1625, 1420); // set bether position later
             isRolling = false;
             maxFrameTimer = 4;
             rollTimer = 0;
@@ -86,8 +86,15 @@ namespace Game
                 };
             #endregion
         }
-        public void Update()
+        public void Update(List<Rectangle> rectangeList)
         {
+
+
+            foreach (Rectangle rect in rectangeList)
+            {
+                position = RectangleToRectangle(rectangle, rect);
+            }
+
             cooldown_DisableControls.Update();
 
             newState = Keyboard.GetState();

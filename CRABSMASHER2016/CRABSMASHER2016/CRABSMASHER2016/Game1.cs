@@ -23,6 +23,7 @@ namespace Game
         private const int test = 5;
 
         List<Tile> tiles = new List<Tile>();
+        List<Rectangle> rectangeList = new List<Rectangle>();
 
         public Main()
         {
@@ -49,9 +50,15 @@ namespace Game
 
             for (int x = 0; x < map.X; x++)
                 for (int y = 0; y < map.Y; y++)
-                    if (map[x,y] != 0)
+                {
+                    if (map[x, y] != 0 && map[x, y] < 17)
                         tiles.Add(new Tile(map[x, y].ToString(), new Rectangle(x * hw, y * hw, 1024, 1024)));
-                
+
+                    if (map[x,y] == 17)
+                    {
+                        rectangeList.Add(new Rectangle(x * 64, y * 64, 64, 64));
+                    }
+                }
             
             base.Initialize();
         }
@@ -71,7 +78,7 @@ namespace Game
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            player.Update();
+            player.Update(rectangeList);
             miniCrab.Update(player);
             camera.Pos = player.position + new Vector2(player.width/2, player.height/2);
 
