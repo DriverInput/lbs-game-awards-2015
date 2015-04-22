@@ -17,70 +17,78 @@ namespace Game
         public float rollLength;
         public int dir = 0;
 
+        public StatsBar bar;
+
         float dx;
         float dy;
         float amount;
         int rollTimer;
         int rollMaxTimer;
 
+        const float maxHp = 100;
+        float hp = maxHp;
+        const float maxStamina = 100;
+        float stamina = maxStamina;
+
         Dir[] dirs;
 
-        Cooldown cooldown_Attack;
-        Cooldown cooldown_frame;
+        Cooldown cooldown_DisableControls;
+        //Cooldown cooldown_frame;
 
         bool isRolling;
 
         public Player()
         {
-            cooldown_Attack = new Cooldown(60,1);
+            cooldown_DisableControls = new Cooldown(25, 1);
 
-            amount = 0.05f; // set bether value later
-            rollLength = 128 * 5f; // set more exact values later
+            amount = 0.08f; // set bether value later
+            rollLength = 128 * 4f; // set more exact values later
             speed = 7;
             position = new Vector2(50, 50); // set bether position later
             isRolling = false;
-            maxFrameTimer = 3;
+            maxFrameTimer = 4;
             rollTimer = 0;
-            rollMaxTimer = 40;
+            rollMaxTimer = 25+6;
             width = 146;
             height = 209;
             textureID = "player";
+            bar = new StatsBar();
             #region Movment keys
             dirs = new Dir[]
                 {   
-                    new Dir(new Keys[]{Keys.I, Keys.L}, 7, new Vector2(1, -1)),
-                    new Dir(new Keys[]{Keys.I, Keys.J}, 5, new Vector2(-1, -1)),
-                    new Dir(new Keys[]{Keys.K, Keys.L}, 1, new Vector2(1, 1)),
-                    new Dir(new Keys[]{Keys.K, Keys.J}, 3, new Vector2(-1, 1)),
-                    new Dir(new Keys[]{Keys.I}, 6, new Vector2(0, -1)),
-                    new Dir(new Keys[]{Keys.K}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.I, Keys.L}, 7, new Vector2(1, -0.8f)),
+                    new Dir(new Keys[]{Keys.I, Keys.J}, 5, new Vector2(-1, -0.8f)),
+                    new Dir(new Keys[]{Keys.K, Keys.L}, 1, new Vector2(1, 0.8f)),
+                    new Dir(new Keys[]{Keys.K, Keys.J}, 3, new Vector2(-1, 0.8f)),
+                    new Dir(new Keys[]{Keys.I}, 6, new Vector2(0, -0.8f)),
+                    new Dir(new Keys[]{Keys.K}, 2, new Vector2(0, 0.8f)),
                     new Dir(new Keys[]{Keys.L}, 0, new Vector2(1, 0)),
                     new Dir(new Keys[]{Keys.J}, 4, new Vector2(-1, 0)),
 
-                    new Dir(new Keys[]{Keys.NumPad8, Keys.NumPad6}, 7, new Vector2(1, -1)),
-                    new Dir(new Keys[]{Keys.NumPad8, Keys.NumPad4}, 5, new Vector2(-1, -1)),
-                    new Dir(new Keys[]{Keys.NumPad2, Keys.NumPad6}, 1, new Vector2(1, 1)),
-                    new Dir(new Keys[]{Keys.NumPad2, Keys.NumPad4}, 3, new Vector2(-1, 1)),
-                    new Dir(new Keys[]{Keys.NumPad8}, 6, new Vector2(0, -1)),
-                    new Dir(new Keys[]{Keys.NumPad2}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.NumPad8, Keys.NumPad6}, 7, new Vector2(1, -0.8f)),
+                    new Dir(new Keys[]{Keys.NumPad8, Keys.NumPad4}, 5, new Vector2(-1, -0.8f)),
+                    new Dir(new Keys[]{Keys.NumPad2, Keys.NumPad6}, 1, new Vector2(1, 0.8f)),
+                    new Dir(new Keys[]{Keys.NumPad2, Keys.NumPad4}, 3, new Vector2(-1, 0.8f)),
+                    new Dir(new Keys[]{Keys.NumPad8}, 6, new Vector2(0, -0.8f)),
+                    new Dir(new Keys[]{Keys.NumPad2}, 2, new Vector2(0, 0.8f)),
                     new Dir(new Keys[]{Keys.NumPad6}, 0, new Vector2(1, 0)),
                     new Dir(new Keys[]{Keys.NumPad4}, 4, new Vector2(-1, 0)),
 
-                    new Dir(new Keys[]{Keys.Up, Keys.Right}, 7, new Vector2(1, -1)),
-                    new Dir(new Keys[]{Keys.Up, Keys.Left}, 5, new Vector2(-1, -1)),
-                    new Dir(new Keys[]{Keys.Down, Keys.Right}, 1, new Vector2(1, 1)),
-                    new Dir(new Keys[]{Keys.Down, Keys.Left}, 3, new Vector2(-1, 1)),
-                    new Dir(new Keys[]{Keys.Up}, 6, new Vector2(0, -1)),
-                    new Dir(new Keys[]{Keys.Down}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.Up, Keys.Right}, 7, new Vector2(1, -0.8f)),
+                    new Dir(new Keys[]{Keys.Up, Keys.Left}, 5, new Vector2(-1, -0.8f)),
+                    new Dir(new Keys[]{Keys.Down, Keys.Right}, 1, new Vector2(1, 0.8f)),
+                    new Dir(new Keys[]{Keys.Down, Keys.Left}, 3, new Vector2(-1, 0.8f)),
+                    new Dir(new Keys[]{Keys.Up}, 6, new Vector2(0, -0.8f)),
+                    new Dir(new Keys[]{Keys.Down}, 2, new Vector2(0, 0.8f)),
                     new Dir(new Keys[]{Keys.Right}, 0, new Vector2(1, 0)),
                     new Dir(new Keys[]{Keys.Left}, 4, new Vector2(-1, 0)),
 
-                    new Dir(new Keys[]{Keys.W, Keys.D}, 7, new Vector2(1, -1)),
-                    new Dir(new Keys[]{Keys.W, Keys.A}, 5, new Vector2(-1, -1)),
-                    new Dir(new Keys[]{Keys.S, Keys.D}, 1, new Vector2(1, 1)),
-                    new Dir(new Keys[]{Keys.S, Keys.A}, 3, new Vector2(-1, 1)),
-                    new Dir(new Keys[]{Keys.W}, 6, new Vector2(0, -1)),
-                    new Dir(new Keys[]{Keys.S}, 2, new Vector2(0, 1)),
+                    new Dir(new Keys[]{Keys.W, Keys.D}, 7, new Vector2(1, -0.8f)),
+                    new Dir(new Keys[]{Keys.W, Keys.A}, 5, new Vector2(-1, -0.8f)),
+                    new Dir(new Keys[]{Keys.S, Keys.D}, 1, new Vector2(1, 0.8f)),
+                    new Dir(new Keys[]{Keys.S, Keys.A}, 3, new Vector2(-1, 0.8f)),
+                    new Dir(new Keys[]{Keys.W}, 6, new Vector2(0, -0.8f)),
+                    new Dir(new Keys[]{Keys.S}, 2, new Vector2(0, 0.8f)),
                     new Dir(new Keys[]{Keys.D}, 0, new Vector2(1, 0)),
                     new Dir(new Keys[]{Keys.A}, 4, new Vector2(-1, 0))
                 };
@@ -88,24 +96,18 @@ namespace Game
         }
         public void Update()
         {
-            cooldown_Attack.Update();
+            cooldown_DisableControls.Update();
+            bar.update(hp / maxHp, stamina / maxStamina);
 
+            hp -= 0.1F;
+            
             newState = Keyboard.GetState();
 
-            Keys[] AttackKeys = new Keys[]
-            { Keys.Enter, Keys.Escape, Keys.NumPad9 , Keys.E };
-
-            foreach (Keys key in AttackKeys)
-                if (newState.IsKeyDown(key))
-                {
-                    cooldown_Attack.Use();
-
-                }
-
-
-            if (cooldown_Attack.Output())
+            #region movement
+            if (!isRolling)//(cooldown_DisableControls.Output())00
             {
-                #region movement
+                stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
+
                 //Movement 
                 foreach (Dir dir in dirs)
                 {
@@ -119,44 +121,47 @@ namespace Game
                     {
                         FrameTimer++;
                         this.dir = dir.dir;
-                        dir.VecDir.Normalize();
-                        position += dir.VecDir * speed;
+                        position += Vector2.Normalize(dir.VecDir) * speed;
                         break;
                     }
                 }
 
-                Console.WriteLine(position);
-
                 currentAnimation = this.dir;
 
-                if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && isRolling == false)
+                if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && stamina >= rollMaxTimer)
                 {
+                    cooldown_DisableControls.Use();
                     isRolling = true;
+                    CurrentFrame = 0;
                     dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
-                    dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength;
-                }
-
-                if (isRolling)
-                {
-                    rollTimer++;
-                    position.X = MathHelper.Lerp(position.X, dx, amount);
-                    position.Y = MathHelper.Lerp(position.Y, dy, amount);
-                }
-
-                if (rollTimer == rollMaxTimer)
-                {
-                    rollTimer = 0;
-                    isRolling = false;
+                    dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength * 0.8f;
                 }
             }
+
+            if (isRolling)
+            {
+                rollTimer++;
+                FrameTimer++;
+                stamina--;
+                position.X = MathHelper.Lerp(position.X, dx, amount);
+                position.Y = MathHelper.Lerp(position.Y, dy, amount);
+                currentAnimation = this.dir + 8;
+            }
+
+            if (rollTimer == rollMaxTimer)
+            {
+                rollTimer = 0;
+                isRolling = false;
+            }
+
                 #endregion
 
-                oldState = newState;
-            
+            oldState = newState;
+
 
         }
 
-        public class Dir
+        private struct Dir
         {
             public Vector2 VecDir;
             public Keys[] keys;

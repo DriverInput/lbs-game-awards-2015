@@ -11,14 +11,13 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    class Tile : Object
+    class CollisionBox
     {
-        public Tile(string newTextureId, Rectangle newRectangle)
+        public Rectangle rectangle;
+
+        public CollisionBox(int x,int y)    
         {
-            textureID = newTextureId;
-            position = new Vector2(newRectangle.X, newRectangle.Y);
-            width = newRectangle.Width;
-            height = newRectangle.Height;
+            rectangle = new Rectangle(x, y, 64, 64);
         }
     }
 }
