@@ -32,9 +32,11 @@ namespace Game
 
         Dir[] dirs;
 
+        Color[] textureData;
+
         Cooldown cooldown_DisableControls;
         //Cooldown cooldown_frame;
-
+        public static Texture2D hitBoxTexture;
         bool isRolling;
 
         public Player()
@@ -44,14 +46,16 @@ namespace Game
             amount = 0.08f; // set bether value later
             rollLength = 128 * 4f; // set more exact values later
             speed = 7;
-            position = new Vector2(1625, 1420); // set bether position later
+            position = new Vector2(2500, 2000); // set bether position later
             isRolling = false;
             maxFrameTimer = 4;
             rollTimer = 0;
-            rollMaxTimer = 25+6;
+            rollMaxTimer = 25+7;
             width = 146;
             height = 209;
             textureID = "player";
+            textureData = new Color[hitBoxTexture.Width * hitBoxTexture.Height];
+            hitBoxTexture.GetData<Color>(textureData);
             bar = new StatsBar();
             #region Movment keys
             dirs = new Dir[]
@@ -94,14 +98,8 @@ namespace Game
                 };
             #endregion
         }
-        public void Update(List<Rectangle> rectangeList)
+        public void Update()
         {
-
-
-            foreach (Rectangle rect in rectangeList)
-            {
-                position = RectangleToRectangle(rectangle, rect);
-            }
 
             cooldown_DisableControls.Update();
             bar.update(hp / maxHp, stamina / maxStamina);
@@ -127,8 +125,9 @@ namespace Game
                     if (Continue)
                     {
                         FrameTimer++;
+                        
                         this.dir = dir.dir;
-                        position += Vector2.Normalize(dir.VecDir) * speed;
+                        this.CheckEnviorementCollision(position, Vector2.Normalize(dir.VecDir) * speed);
                         break;
                     }
                 }
@@ -150,8 +149,10 @@ namespace Game
                 rollTimer++;
                 FrameTimer++;
                 stamina--;
-                position.X = MathHelper.Lerp(position.X, dx, amount);
-                position.Y = MathHelper.Lerp(position.Y, dy, amount);
+                
+                float deltaPositionX = MathHelper.Lerp(position.X, dx, amount) - position.X;
+                float deltaPositionY = MathHelper.Lerp(position.Y, dy, amount) - position.Y;
+                CheckEnviorementCollision(position, new Vector2(deltaPositionX, deltaPositionY));
                 currentAnimation = this.dir + 8;
             }
 
@@ -166,6 +167,45 @@ namespace Game
             oldState = newState;
 
 
+        }
+
+        private void CheckEnviorementCollision(Vector2 currentPosition, Vector2 velocity)
+        {
+            Vector2 velocityByX = new Vector2(velocity.X, 0);
+            Vector2 velocityByY = new Vector2(0, velocity.Y);
+            Vector2 nextPosition = position;
+
+            Vector2 futurePosition = nextPosition + velocityByX;
+            Rectangle hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
+            for (int i = 0; i < 12; i++)
+            {
+                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                {
+                    break;
+
+                }
+                else if (i == 11)
+                {
+                    nextPosition = futurePosition;
+                }
+            }
+
+            futurePosition = nextPosition + velocityByY;
+            hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
+            for (int i = 0; i < 12; i++)
+            {
+                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                {
+                    break;
+
+                }
+                else if (i == 11)
+                {
+                    nextPosition = futurePosition;
+                }
+            }
+
+            position = nextPosition;
         }
 
         private struct Dir

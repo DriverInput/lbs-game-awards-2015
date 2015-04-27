@@ -33,7 +33,7 @@ namespace Game
             velocity = Converter.Float.CosSin(targetAngle) * speed;
             position += velocity;
 
-            Rectangle playerOffSetRectangle = new Rectangle(player.rectangle.X, player.rectangle.Y + 100, player.rectangle.Width, player.rectangle.Height - 100);
+            Rectangle playerOffSetRectangle = new Rectangle(player.rectangle.X, player.rectangle.Y, player.rectangle.Width, player.rectangle.Height);
             player.position = RectangleToRectangle(playerOffSetRectangle, this.rectangle);// RectangleToRectangle(player.position.X, player.position.Y, player.width, player.height, position.X, position.Y, width, height);
 
             FrameTimer++;

@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    public class TextureManager
+    public struct TextureManager
     {
         public static Dictionary<string, string> InitializeTextures = new Dictionary<string, string>();
         public static Dictionary<string, Texture2D> Textures = new Dictionary<string, Texture2D>();

@@ -32,6 +32,7 @@ namespace Game
 
         public void update(float hpProcentage, float staminaProcentage)
         {
+            
             staminaRect.Width = (int)(stamina.Bounds.Width * staminaProcentage);
             hpRect.Width = (int)(hp.Bounds.Width * hpProcentage);
             

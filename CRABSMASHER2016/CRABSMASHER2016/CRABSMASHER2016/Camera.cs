@@ -29,7 +29,7 @@ namespace Game
         public float Zoom
         {
             get { return _zoom; }
-            set { _zoom = value; if (_zoom > 2f) _zoom = 2f; if (_zoom < 0.5f) _zoom = 0.5f; } // Negative zoom will flip image
+            set { _zoom = value; } // Negative zoom will flip image if (_zoom > 2f) _zoom = 2f; if (_zoom < 0.5f) _zoom = 0.5f; 
         }
 
         public float Rotation

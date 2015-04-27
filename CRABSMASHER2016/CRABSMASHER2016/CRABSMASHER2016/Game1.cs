@@ -11,20 +11,25 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
+    
     public class Main : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
         Player player;
-        Camera camera;
-        MiniCrab miniCrab;
-        CrabKing crabKing;
+        MiniCrab miniCrab = new MiniCrab();
+        CrabKing crabKing = new CrabKing();
+        Camera camera = new Camera();
 
-        private const int test = 5;
+        //List<Tile> tiles = new List<Tile>();
+        //List<Rectangle> rectangeList = new List<Rectangle>();
+        public static Rectangle[] collisionMaskRects = new Rectangle[12];
+        Texture2D[] collisionMasks = new Texture2D[12];
+        public static Color[][] collisionsMaskDataArrays = new Color[12][];
+        Texture2D[] environment = new Texture2D[12];
 
-        List<Tile> tiles = new List<Tile>();
-        List<Rectangle> rectangeList = new List<Rectangle>();
+        long totalmem;
 
         public Main()
         {
@@ -36,6 +41,36 @@ namespace Game
 
         protected override void Initialize()
         {
+
+            Console.WriteLine("INITIALIZE DATAARRAYS, LOAD COLLISION MASKS AND SAVE THEIR DATA");
+            Console.WriteLine();
+
+            for (sbyte i = 0; i < 12; i++)
+            {
+                collisionMasks[i] = Content.Load<Texture2D>("CollisionMasks/CM" + (i + 1));
+                collisionsMaskDataArrays[i] = new Color[10833920];
+                collisionMasks[i].GetData<Color>(collisionsMaskDataArrays[i]);
+                collisionMasks[i].Dispose();
+                GC.Collect();
+                Console.WriteLine("Loaded, saved its data, disposed CM " + (i+1) + "/12");
+                
+            }
+            Console.WriteLine("FINISHED LOADING CMs AND DATAARRAYS");
+
+            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            Console.ReadLine();
+
+            Console.WriteLine("LOAD ENIRONMENT TEXTURES");
+            for (sbyte i = 1; i < 13; i++)
+            {
+                environment[i - 1] = Content.Load<Texture2D>("mapParts/MapPart" + i);
+            }
+            Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
+
+            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            Console.ReadLine();
+
+            Console.WriteLine("LOAD THE REST OF THE TEXTURE");
             TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
             TextureManager.InitializeTextures.Add("CrabKing", "CrabKing");
@@ -44,61 +79,110 @@ namespace Game
             TextureManager.InitializeTextures.Add("hp", "hp");
             TextureManager.InitializeTextures.Add("stamina", "stamina");
             TextureManager.InitializeTextures.Add("bord", "bord");
-
-            for (int i = 1; i < 17; i++)            
-                TextureManager.InitializeTextures.Add(i.ToString(), "mapParts/mapPart" + i);
-
             //JAG HAR SYNDAT! SORRY JESS!
             TextureManager.LoadContent(Content);
 
-            player = new Player();
-            miniCrab = new MiniCrab();
-            crabKing = new CrabKing();
-            camera = new Camera();
-
-            Map map = MapLoader.LoadMap("map.txt");
-            int hw = 64;
-
-            for (int x = 0; x < map.X; x++)
-                for (int y = 0; y < map.Y; y++)
-                {
-                    if (map[x, y] != 0 && map[x, y] < 17)
-                        tiles.Add(new Tile(map[x, y].ToString(), new Rectangle(x * hw, y * hw, 1024, 1024)));
-
-                    if (map[x,y] == 17)
-                    {
-                        rectangeList.Add(new Rectangle(x * 64, y * 64, 64, 64));
-                    }
-                }
+            Player.hitBoxTexture = Content.Load<Texture2D>("hitBoxTexture");
             
+            Console.WriteLine("FINISHED LODING THE REST OF THE TEXTURES");
+
+            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            Console.ReadLine();
+
+            Console.WriteLine("CALCULATE CMrects");
+            short w = 4096;
+            short h = 2645;
+            sbyte n = 0;
+
+            //Rectangle position;
+            for (sbyte x = 0; x < 3; x++)
+                for (sbyte y = 0; y < 4; y++)
+                {
+                    collisionMaskRects[n] = new Rectangle(y * w, x * h, w, h);
+                    n++;
+                }
+
+            Console.WriteLine("FINISHED CALCULATING CMrects");
+
+            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            Console.ReadLine();
+
+            player = new Player();
+
+            Console.WriteLine("DONE! RUN GAME!");
+            Console.ReadLine();
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            
         }
 
+        //float zoom = 0.8f;
         protected override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            player.Update(rectangeList);
+            player.Update();
             miniCrab.Update(player);
-            camera.Pos = player.position + new Vector2(player.width/2, player.height/2);
+            camera.Pos = player.position + new Vector2(player.width / 2, player.height / 2);
+            //if (Keyboard.GetState().IsKeyDown(Keys.Q))
+            //    zoom -= 0.01f;
+            //if (Keyboard.GetState().IsKeyDown(Keys.E))
+            //    zoom += 0.01f;
+
+            //camera.Zoom = zoom;
             crabKing.Update(player);
             base.Update(gameTime);
+        }
+
+        static bool IntersectPixels(Rectangle rectangleA, Color[] dataA,
+                                    Rectangle rectangleB, Color[] dataB)
+        {
+            // Find the bounds of the rectangle intersection
+            int top = Math.Max(rectangleA.Top, rectangleB.Top);
+            int bottom = Math.Min(rectangleA.Bottom, rectangleB.Bottom);
+            int left = Math.Max(rectangleA.Left, rectangleB.Left);
+            int right = Math.Min(rectangleA.Right, rectangleB.Right);
+
+            // Check every point within the intersection bounds
+            for (int y = top; y < bottom; y++)
+            {
+                for (int x = left; x < right; x++)
+                {
+                    // Get the color of both pixels at this point
+                    Color colorA = dataA[(x - rectangleA.Left) +
+                                         (y - rectangleA.Top) * rectangleA.Width];
+                    Color colorB = dataB[(x - rectangleB.Left) +
+                                         (y - rectangleB.Top) * rectangleB.Width];
+
+                    // If both pixels are not completely transparent,
+                    if (colorA.A != 0 && colorB.A != 0)
+                    {
+                        // then an intersection has been found
+                        return true;
+                    }
+                }
+            }
+
+            // No intersection found
+            return false;
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null,null,null,null,camera.get_transformation(GraphicsDevice));
-            foreach (Tile tile in tiles)
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.get_transformation(GraphicsDevice));
+
+            for (int i = 0; i < 12; i++)
             {
-                tile.Draw(spriteBatch);
+                spriteBatch.Draw(environment[i], collisionMaskRects[i], Color.White);
             }
+
             miniCrab.Draw(spriteBatch);
             player.Draw(spriteBatch);
             crabKing.Draw(spriteBatch);
@@ -111,9 +195,9 @@ namespace Game
             spriteBatch.End();
 
             //Console debuging
-            Console.Clear();
-            Console.WriteLine(player.position);
-            Console.WriteLine(gameTime.IsRunningSlowly);
+            //Console.Clear();
+            //Console.WriteLine(player.position);
+            //Console.WriteLine(gameTime.IsRunningSlowly);
 
             base.Draw(gameTime);
         }
