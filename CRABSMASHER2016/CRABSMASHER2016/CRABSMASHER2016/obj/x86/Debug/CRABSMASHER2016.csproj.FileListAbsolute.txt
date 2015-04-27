@@ -83,9 +83,3 @@ C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER201
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\hp.xnb
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stamina.xnb
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\bord.xnb
-C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CrabArm.xnb
-C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CrabKing.xnb
-C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\bar.xnb
-C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\hp.xnb
-C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stamina.xnb
-C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\bord.xnb
