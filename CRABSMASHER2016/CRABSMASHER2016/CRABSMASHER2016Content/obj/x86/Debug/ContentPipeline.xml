@@ -163,6 +163,60 @@
       <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\mapPart9.xnb</Output>
       <Time>2015-04-14T15:43:04.0975989+02:00</Time>
     </Item>
+    <Item>
+      <Source>CrabArm.png</Source>
+      <Name>CrabArm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CrabArm.xnb</Output>
+      <Time>2015-04-22T13:46:31.7646611+02:00</Time>
+    </Item>
+    <Item>
+      <Source>CrabKing.png</Source>
+      <Name>CrabKing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CrabKing.xnb</Output>
+      <Time>2015-04-22T13:46:31.7656611+02:00</Time>
+    </Item>
+    <Item>
+      <Source>bar.png</Source>
+      <Name>bar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\bar.xnb</Output>
+      <Time>2015-04-22T13:46:31.7666611+02:00</Time>
+    </Item>
+    <Item>
+      <Source>hp.png</Source>
+      <Name>hp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\hp.xnb</Output>
+      <Time>2015-04-22T13:46:31.7686611+02:00</Time>
+    </Item>
+    <Item>
+      <Source>stamina.png</Source>
+      <Name>stamina</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stamina.xnb</Output>
+      <Time>2015-04-22T13:46:31.7696611+02:00</Time>
+    </Item>
+    <Item>
+      <Source>bord.png</Source>
+      <Name>bord</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\bord.xnb</Output>
+      <Time>2015-04-22T13:46:31.7676611+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
