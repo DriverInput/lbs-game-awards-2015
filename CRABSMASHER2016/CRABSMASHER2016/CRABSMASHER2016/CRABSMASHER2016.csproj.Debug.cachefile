@@ -1,24 +1,5 @@
 Content\spriteplaceholder.xnb
 Content\lil krabba spritesheet.xnb
-<<<<<<< HEAD
-=======
-Content\mapParts\mapPart1.xnb
-Content\mapParts\mapPart10.xnb
-Content\mapParts\mapPart11.xnb
-Content\mapParts\mapPart12.xnb
-Content\mapParts\mapPart13.xnb
-Content\mapParts\mapPart14.xnb
-Content\mapParts\mapPart15.xnb
-Content\mapParts\mapPart16.xnb
-Content\mapParts\mapPart2.xnb
-Content\mapParts\mapPart3.xnb
-Content\mapParts\mapPart4.xnb
-Content\mapParts\mapPart5.xnb
-Content\mapParts\mapPart6.xnb
-Content\mapParts\mapPart7.xnb
-Content\mapParts\mapPart8.xnb
-Content\mapParts\mapPart9.xnb
->>>>>>> 30dfe2437d40fc63d55f646c58f51a49b2d8396a
 Content\CrabArm.xnb
 Content\CrabKing.xnb
 Content\bar.xnb
@@ -37,6 +18,7 @@ Content\CollisionMasks\CM6.xnb
 Content\CollisionMasks\CM7.xnb
 Content\CollisionMasks\CM8.xnb
 Content\CollisionMasks\CM9.xnb
+Content\hitBoxTexture.xnb
 Content\mapParts\MapPart1.xnb
 Content\mapParts\MapPart10.xnb
 Content\mapParts\MapPart11.xnb
@@ -49,4 +31,13 @@ Content\mapParts\MapPart6.xnb
 Content\mapParts\MapPart7.xnb
 Content\mapParts\MapPart8.xnb
 Content\mapParts\MapPart9.xnb
-Content\hitBoxTexture.xnb
+Content\step1.xnb
+Content\step2.xnb
+Content\step3.xnb
+Content\step4.xnb
+Content\step5.xnb
+Content\step6.xnb
+Content\step7.xnb
+Content\step8.xnb
+Content\step9.xnb
+Content\step10.xnb

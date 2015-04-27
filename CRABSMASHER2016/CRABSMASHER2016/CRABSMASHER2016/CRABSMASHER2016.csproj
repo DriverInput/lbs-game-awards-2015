@@ -92,6 +92,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Rockbose.cs" />
+    <Compile Include="SoundManager.cs" />
     <Compile Include="StatsBar.cs" />
     <Compile Include="TextureManager.cs" />
     <Compile Include="Tile.cs" />
