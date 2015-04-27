@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM1.xnb</Output>
-      <Time>2015-04-23T19:30:38.4879187+02:00</Time>
+      <Time>2015-04-27T09:09:23.2064501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM10.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM10.xnb</Output>
-      <Time>2015-04-23T19:30:38.7779192+02:00</Time>
+      <Time>2015-04-27T09:09:23.2074501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM11.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM11.xnb</Output>
-      <Time>2015-04-23T19:30:38.8279192+02:00</Time>
+      <Time>2015-04-27T09:09:23.2134501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM12.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM12.xnb</Output>
-      <Time>2015-04-23T19:30:38.8479192+02:00</Time>
+      <Time>2015-04-27T09:09:23.2184501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM2.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM2.xnb</Output>
-      <Time>2015-04-23T19:30:38.4979188+02:00</Time>
+      <Time>2015-04-27T09:09:23.2224501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM3.png</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM3.xnb</Output>
-      <Time>2015-04-23T19:30:38.5379188+02:00</Time>
+      <Time>2015-04-27T09:09:23.2284501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM4.png</Source>
@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM4.xnb</Output>
-      <Time>2015-04-23T19:30:38.5479188+02:00</Time>
+      <Time>2015-04-27T09:09:23.2314501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM5.png</Source>
@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM5.xnb</Output>
-      <Time>2015-04-23T19:30:38.6079189+02:00</Time>
+      <Time>2015-04-27T09:09:23.2364501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM6.png</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM6.xnb</Output>
-      <Time>2015-04-23T19:30:38.657919+02:00</Time>
+      <Time>2015-04-27T09:09:23.2384501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM7.png</Source>
@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM7.xnb</Output>
-      <Time>2015-04-23T19:30:38.677919+02:00</Time>
+      <Time>2015-04-27T09:09:23.2414501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM8.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM8.xnb</Output>
-      <Time>2015-04-23T19:30:38.7079191+02:00</Time>
+      <Time>2015-04-27T09:09:23.2464501+02:00</Time>
     </Item>
     <Item>
       <Source>CollisionMasks\CM9.png</Source>
@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CollisionMasks\CM9.xnb</Output>
-      <Time>2015-04-23T19:30:38.7279191+02:00</Time>
+      <Time>2015-04-27T09:09:23.2494501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart1.jpg</Source>
@@ -188,7 +188,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart1.xnb</Output>
-      <Time>2015-04-23T19:44:39.9169624+02:00</Time>
+      <Time>2015-04-27T09:09:23.4044501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart10.jpg</Source>
@@ -197,7 +197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart10.xnb</Output>
-      <Time>2015-04-23T19:44:39.9869641+02:00</Time>
+      <Time>2015-04-27T09:09:23.4874501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart11.jpg</Source>
@@ -206,7 +206,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart11.xnb</Output>
-      <Time>2015-04-23T19:44:39.9869641+02:00</Time>
+      <Time>2015-04-27T09:09:23.5604501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart12.jpg</Source>
@@ -215,7 +215,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart12.xnb</Output>
-      <Time>2015-04-23T19:44:39.9969642+02:00</Time>
+      <Time>2015-04-27T09:09:23.6364501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart2.jpg</Source>
@@ -224,7 +224,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart2.xnb</Output>
-      <Time>2015-04-23T19:44:39.9269624+02:00</Time>
+      <Time>2015-04-27T09:09:23.7084501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart3.jpg</Source>
@@ -233,7 +233,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart3.xnb</Output>
-      <Time>2015-04-23T19:44:39.9269624+02:00</Time>
+      <Time>2015-04-27T09:09:23.7854501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart4.jpg</Source>
@@ -242,7 +242,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart4.xnb</Output>
-      <Time>2015-04-23T19:44:39.9369624+02:00</Time>
+      <Time>2015-04-27T09:09:23.8654501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart5.jpg</Source>
@@ -251,7 +251,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart5.xnb</Output>
-      <Time>2015-04-23T19:44:39.9519627+02:00</Time>
+      <Time>2015-04-27T09:09:24.2424501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart6.jpg</Source>
@@ -260,7 +260,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart6.xnb</Output>
-      <Time>2015-04-23T19:44:39.9599632+02:00</Time>
+      <Time>2015-04-27T09:09:24.3284501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart7.jpg</Source>
@@ -269,7 +269,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart7.xnb</Output>
-      <Time>2015-04-23T19:44:39.9659635+02:00</Time>
+      <Time>2015-04-27T09:09:24.5184501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart8.jpg</Source>
@@ -278,7 +278,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart8.xnb</Output>
-      <Time>2015-04-23T19:44:39.974964+02:00</Time>
+      <Time>2015-04-27T09:09:24.6114501+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart9.jpg</Source>
@@ -287,7 +287,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart9.xnb</Output>
-      <Time>2015-04-23T19:44:39.9769641+02:00</Time>
+      <Time>2015-04-27T09:09:24.7954501+02:00</Time>
     </Item>
     <Item>
       <Source>hitBoxTexture.png</Source>
@@ -296,7 +296,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\hitBoxTexture.xnb</Output>
-      <Time>2015-04-25T18:03:58.1846167+02:00</Time>
+      <Time>2015-04-27T09:09:23.2524501+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
