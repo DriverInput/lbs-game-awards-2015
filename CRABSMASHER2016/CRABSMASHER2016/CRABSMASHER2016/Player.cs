@@ -30,8 +30,6 @@ namespace Game
         const float maxStamina = 100;
         float stamina = maxStamina;
 
-        bool stunned;
-
         Dir[] dirs;
 
         Color[] textureData;
@@ -100,32 +98,18 @@ namespace Game
                 };
             #endregion
         }
-
         public void Update()
         {
+
             cooldown_DisableControls.Update();
             bar.update(hp / maxHp, stamina / maxStamina);
 
             hp -= 0.1F;
-            stamina = 10000;
+            
             newState = Keyboard.GetState();
-            float F = 0.5f;
-            if (stunned)
-            {
-                if (velocity.X > 0)
-                    velocity.X -= F;
 
-                if (velocity.X < 0)
-                    velocity.X += F;
-
-                if (velocity.Y > 0)
-                    velocity.Y -= F;
-
-                if (velocity.Y < 0)
-                    velocity.Y += F;
-            }
             #region movement
-            if (!isRolling)
+            if (!isRolling)//(cooldown_DisableControls.Output())00
             {
                 stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
 
@@ -137,15 +121,13 @@ namespace Game
                     foreach (Keys key in dir.keys)
                         if (!newState.IsKeyDown(key))
                             Continue = false;
-                            
-                    velocity = Vector2.Zero;
-                    
+
                     if (Continue)
                     {
                         FrameTimer++;
-
+                        
                         this.dir = dir.dir;
-                        velocity = Vector2.Normalize(dir.VecDir) * speed;
+                        this.CheckEnviorementCollision(position, Vector2.Normalize(dir.VecDir) * speed);
                         break;
                     }
                 }
@@ -159,15 +141,7 @@ namespace Game
                     CurrentFrame = 0;
                     dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength * 0.8f;
-
-                    currentAnimation = this.dir + 8;
                 }
-            }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.R))
-            {
-                velocity.X = 10;
-                stunned = true;
             }
 
             if (isRolling)
@@ -175,10 +149,11 @@ namespace Game
                 rollTimer++;
                 FrameTimer++;
                 stamina--;
-
+                
                 float deltaPositionX = MathHelper.Lerp(position.X, dx, amount) - position.X;
                 float deltaPositionY = MathHelper.Lerp(position.Y, dy, amount) - position.Y;
-                velocity = new Vector2(deltaPositionX, deltaPositionY);
+                CheckEnviorementCollision(position, new Vector2(deltaPositionX, deltaPositionY));
+                currentAnimation = this.dir + 8;
             }
 
             if (rollTimer == rollMaxTimer)
@@ -187,9 +162,7 @@ namespace Game
                 isRolling = false;
             }
 
-            CheckEnviorementCollision(position, velocity);
-
-            #endregion
+                #endregion
 
             oldState = newState;
 
@@ -206,9 +179,10 @@ namespace Game
             Rectangle hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
             for (int i = 0; i < 12; i++)
             {
-                if (Collision.IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
                 {
                     break;
+
                 }
                 else if (i == 11)
                 {
@@ -220,7 +194,7 @@ namespace Game
             hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
             for (int i = 0; i < 12; i++)
             {
-                if (Collision.IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
                 {
                     break;
 

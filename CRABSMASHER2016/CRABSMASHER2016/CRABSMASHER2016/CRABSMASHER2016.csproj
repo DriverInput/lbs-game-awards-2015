@@ -79,7 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
-    <Compile Include="Collision.cs" />
     <Compile Include="CollisionBox.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Cooldown.cs" />
