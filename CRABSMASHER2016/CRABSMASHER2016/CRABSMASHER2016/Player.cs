@@ -126,7 +126,7 @@ namespace Game
                     {
                         FrameTimer++;
 
-                        if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 5)
+                        if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 4)
                         {
                             SoundManager.WalkingSounds();
                         }

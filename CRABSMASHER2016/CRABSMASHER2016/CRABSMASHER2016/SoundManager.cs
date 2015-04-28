@@ -21,22 +21,23 @@ namespace Game
 
         public static void LoadContent(ContentManager content) 
         {
-            stepSounds[0] = content.Load<SoundEffect>("step1");
-            stepSounds[1] = content.Load<SoundEffect>("step2");
-            stepSounds[2] = content.Load<SoundEffect>("step3");
-            stepSounds[3] = content.Load<SoundEffect>("step4");
-            stepSounds[4] = content.Load<SoundEffect>("step5");
-            stepSounds[5] = content.Load<SoundEffect>("step6");
-            stepSounds[6] = content.Load<SoundEffect>("step7");
-            stepSounds[7] = content.Load<SoundEffect>("step8");
-            stepSounds[8] = content.Load<SoundEffect>("step9");
-            stepSounds[9] = content.Load<SoundEffect>("step10");
+            for (int i = 0; i < stepSounds.Length; i++)
+            {
+                stepSounds[i] = content.Load<SoundEffect>("step" + (i + 1));
+            }
         }
 
+        static int prevRandom = 0;
+        static int newRandom = 0;
         public static void WalkingSounds() 
         {
             Random rnd = new Random();
-            stepSounds[rnd.Next(0,10)].Play();
+            do
+            {
+              newRandom = rnd.Next(0,stepSounds.Length);
+            } while (newRandom == prevRandom);
+            prevRandom = newRandom;
+            stepSounds[newRandom].Play();
         }
     }
 }
