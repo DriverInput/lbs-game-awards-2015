@@ -11,88 +11,8 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    class Object
+    static class Collision
     {
-        public Vector2 position;
-        public Rectangle sourceRectangle
-        { 
-            get{
-                return new Rectangle(CurrentFrame * width, (currentAnimation) * height, width, height);
-            }
-        }
-        public int width;
-        public int height;
-        public float angle;
-        public float angleOffset;
-        public Vector2 origin;
-        protected string textureID;
-
-        public int speed = 8;
-
-        public int windowWidth;
-        public int windowHeight;
-
-        public Vector2 velocity;
-
-        public Rectangle rectangle
-        {
-            get
-            {
-                return new Rectangle((int)position.X, (int)position.Y, width, height);
-            }
-            set
-            {
-                rectangle = value;
-            }
-        }
-
-        private int currentFrame = 0;
-        public int CurrentFrame {
-            get
-            {
-                return currentFrame;
-            }
-            set
-            {
-                if (value < maxFrame)
-                    currentFrame = value;
-                else if (value == maxFrame)
-                    currentFrame = 0;
-            }
-        }
-        public int currentAnimation;
-
-        private int frameTimer;
-        public int FrameTimer
-        {
-            get
-            {
-                return frameTimer;
-            }
-            set
-            {
-                if (value <= maxFrameTimer)
-                    frameTimer = value;
-                else if (value >= maxFrameTimer)
-                {
-                    frameTimer = 0;
-                    CurrentFrame++;
-                }
-            }
-        }
-
-        public int maxFrameTimer;
-
-        public int maxFrame { get { return (TextureManager.Textures[textureID].Width / width) - 1; } }
-        public int maxAnimation { get { return (TextureManager.Textures[textureID].Height / height) - 1; } }
-
-        public SpriteEffects spriteEffect = SpriteEffects.None;
-
-        public void Draw(SpriteBatch sb)
-        {
-            sb.Draw(TextureManager.Textures[textureID], rectangle, sourceRectangle, Color.White, angle + angleOffset, origin, spriteEffect, 1f);
-        }
-
         public static Vector2 RectangleToRectangle(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2)
         {
             float dw = 0.5f * (w1 + w2);
@@ -223,6 +143,37 @@ namespace Game
             return new Vector2(A.X - AxOffSet, A.Y - AyOffset);
         }
 
-        
+        public static bool IntersectPixels(Rectangle rectangleA, Color[] dataA,
+                                    Rectangle rectangleB, Color[] dataB)
+        {
+            // Find the bounds of the rectangle intersection
+            int top = Math.Max(rectangleA.Top, rectangleB.Top);
+            int bottom = Math.Min(rectangleA.Bottom, rectangleB.Bottom);
+            int left = Math.Max(rectangleA.Left, rectangleB.Left);
+            int right = Math.Min(rectangleA.Right, rectangleB.Right);
+
+            // Check every point within the intersection bounds
+            for (int y = top; y < bottom; y++)
+            {
+                for (int x = left; x < right; x++)
+                {
+                    // Get the color of both pixels at this point
+                    Color colorA = dataA[(x - rectangleA.Left) +
+                                         (y - rectangleA.Top) * rectangleA.Width];
+                    Color colorB = dataB[(x - rectangleB.Left) +
+                                         (y - rectangleB.Top) * rectangleB.Width];
+
+                    // If both pixels are not completely transparent,
+                    if (colorA.A != 0 && colorB.A != 0)
+                    {
+                        // then an intersection has been found
+                        return true;
+                    }
+                }
+            }
+
+            // No intersection found
+            return false;
+        }
     }
 }

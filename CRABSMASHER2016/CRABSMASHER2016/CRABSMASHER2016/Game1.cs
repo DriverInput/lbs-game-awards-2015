@@ -31,6 +31,8 @@ namespace Game
 
         long totalmem;
 
+        bool debugStart = true;
+
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -38,12 +40,14 @@ namespace Game
             graphics.PreferredBackBufferHeight = 900;
             Content.RootDirectory = "Content";
         }
-
+        
         protected override void Initialize()
         {
-
-            Console.WriteLine("INITIALIZE DATAARRAYS, LOAD COLLISION MASKS AND SAVE THEIR DATA");
-            Console.WriteLine();
+            if (debugStart)
+            {
+                Console.WriteLine("INITIALIZE DATAARRAYS, LOAD COLLISION MASKS AND SAVE THEIR DATA");
+                Console.WriteLine();
+            }
 
             for (sbyte i = 0; i < 12; i++)
             {
@@ -55,22 +59,28 @@ namespace Game
                 Console.WriteLine("Loaded, saved its data, disposed CM " + (i+1) + "/12");
                 
             }
-            Console.WriteLine("FINISHED LOADING CMs AND DATAARRAYS");
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED LOADING CMs AND DATAARRAYS");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
 
-            Console.WriteLine("LOAD ENIRONMENT TEXTURES");
+                Console.WriteLine("LOAD ENIRONMENT TEXTURES");
+            }
             for (sbyte i = 1; i < 13; i++)
             {
                 environment[i - 1] = Content.Load<Texture2D>("mapParts/MapPart" + i);
             }
-            Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
 
-            Console.WriteLine("LOAD THE REST OF THE TEXTURE");
+                Console.WriteLine("LOAD THE REST OF THE TEXTURE");
+            }
             TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
             TextureManager.InitializeTextures.Add("CrabKing", "CrabKing");
@@ -83,13 +93,16 @@ namespace Game
             TextureManager.LoadContent(Content);
 
             Player.hitBoxTexture = Content.Load<Texture2D>("hitBoxTexture");
-            
-            Console.WriteLine("FINISHED LODING THE REST OF THE TEXTURES");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED LODING THE REST OF THE TEXTURES");
 
-            Console.WriteLine("CALCULATE CMrects");
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
+
+                Console.WriteLine("CALCULATE CMrects");
+            }
             short w = 4096;
             short h = 2645;
             sbyte n = 0;
@@ -102,16 +115,21 @@ namespace Game
                     n++;
                 }
 
-            Console.WriteLine("FINISHED CALCULATING CMrects");
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED CALCULATING CMrects");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
-
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
+            }
             player = new Player();
 
-            Console.WriteLine("DONE! RUN GAME!");
-            Console.ReadLine();
-
+            if (debugStart)
+            {
+                Console.WriteLine("DONE! RUN GAME!");
+                Console.ReadLine();
+            }
+            
             base.Initialize();
         }
 
