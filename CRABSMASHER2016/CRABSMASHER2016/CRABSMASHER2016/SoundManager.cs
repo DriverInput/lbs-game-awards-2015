@@ -29,7 +29,7 @@ namespace Game
 
         static int prevRandom = 0;
         static int newRandom = 0;
-        public static void WalkingSounds() 
+        public static void PlayWalkingSound() 
         {
             Random rnd = new Random();
             do

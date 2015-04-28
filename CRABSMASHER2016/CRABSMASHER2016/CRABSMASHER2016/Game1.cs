@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    
+
     public class Main : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
@@ -22,14 +22,14 @@ namespace Game
         CrabKing crabKing = new CrabKing();
         Camera camera = new Camera();
 
-        //List<Tile> tiles = new List<Tile>();
-        //List<Rectangle> rectangeList = new List<Rectangle>();
+        List<Tile> tiles = new List<Tile>();
+        List<Rectangle> rectangeList = new List<Rectangle>();
         public static Rectangle[] collisionMaskRects = new Rectangle[12];
         Texture2D[] collisionMasks = new Texture2D[12];
         public static Color[][] collisionsMaskDataArrays = new Color[12][];
         Texture2D[] environment = new Texture2D[12];
 
-        long totalmem;
+        bool debugStart = false;
 
         public Main()
         {
@@ -41,10 +41,11 @@ namespace Game
 
         protected override void Initialize()
         {
-
-            //Console.WriteLine("INITIALIZE DATAARRAYS, LOAD COLLISION MASKS AND SAVE THEIR DATA");
-            //Console.WriteLine();
-
+            if (debugStart)
+            {
+                Console.WriteLine("INITIALIZE DATAARRAYS, LOAD COLLISION MASKS AND SAVE THEIR DATA");
+                Console.WriteLine();
+            }
             for (sbyte i = 0; i < 12; i++)
             {
                 collisionMasks[i] = Content.Load<Texture2D>("CollisionMasks/CM" + (i + 1));
@@ -52,25 +53,32 @@ namespace Game
                 collisionMasks[i].GetData<Color>(collisionsMaskDataArrays[i]);
                 collisionMasks[i].Dispose();
                 GC.Collect();
-                //Console.WriteLine("Loaded, saved its data, disposed CM " + (i+1) + "/12");
+                Console.WriteLine("Loaded, saved its data, disposed CM " + (i+1) + "/12");
                 
             }
-            //Console.WriteLine("FINISHED LOADING CMs AND DATAARRAYS");
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED LOADING CMs AND DATAARRAYS");
 
-            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            //Console.ReadLine();
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
 
-            //Console.WriteLine("LOAD ENIRONMENT TEXTURES");
+                Console.WriteLine("LOAD ENIRONMENT TEXTURES");
+            }
+            
             for (sbyte i = 1; i < 13; i++)
             {
                 environment[i - 1] = Content.Load<Texture2D>("mapParts/MapPart" + i);
             }
-            //Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
 
-            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            //Console.ReadLine();
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
 
-            //Console.WriteLine("LOAD THE REST OF THE TEXTURE");
+                Console.WriteLine("LOAD THE REST OF THE TEXTURE");
+            }
             TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
             TextureManager.InitializeTextures.Add("CrabKing", "CrabKing");
@@ -83,18 +91,20 @@ namespace Game
             TextureManager.LoadContent(Content);
 
             Player.hitBoxTexture = Content.Load<Texture2D>("hitBoxTexture");
-            
-            //Console.WriteLine("FINISHED LODING THE REST OF THE TEXTURES");
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED LODING THE REST OF THE TEXTURES");
 
-            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            //Console.ReadLine();
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
 
-            //Console.WriteLine("CALCULATE CMrects");
+                Console.WriteLine("CALCULATE CMrects");
+            }
+
             short w = 4096;
             short h = 2645;
             sbyte n = 0;
 
-            //Rectangle position;
             for (sbyte x = 0; x < 3; x++)
                 for (sbyte y = 0; y < 4; y++)
                 {
@@ -102,16 +112,20 @@ namespace Game
                     n++;
                 }
 
-            //Console.WriteLine("FINISHED CALCULATING CMrects");
+            if (debugStart)
+            {
+                Console.WriteLine("FINISHED CALCULATING CMrects");
 
-            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            //Console.ReadLine();
-
+                Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+                Console.ReadLine();
+            }
             player = new Player();
 
-            //Console.WriteLine("DONE! RUN GAME!");
-            //Console.ReadLine();
-
+            Console.WriteLine("DONE! RUN GAME!");
+            if (debugStart)
+            {
+                Console.ReadLine();
+            }
             base.Initialize();
         }
 

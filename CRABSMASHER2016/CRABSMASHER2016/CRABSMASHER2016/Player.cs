@@ -38,6 +38,7 @@ namespace Game
         //Cooldown cooldown_frame;
         public static Texture2D hitBoxTexture;
         bool isRolling;
+        bool isStunned;
 
         public Player()
         {
@@ -98,6 +99,7 @@ namespace Game
                 };
             #endregion
         }
+
         public void Update()
         {
 
@@ -105,11 +107,21 @@ namespace Game
             bar.update(hp / maxHp, stamina / maxStamina);
 
             hp -= 0.1F;
+            float F = 0.5f;
+            if (isStunned)
+            {
+                if (velocity.X > 0) velocity.X -= F;
+                if (velocity.X < 0) velocity.X += F;
+                if (velocity.Y > 0) velocity.Y -= F;
+                if (velocity.Y < 0) velocity.Y += F;
+
+                if (velocity.X == 0) isStunned = false;
+            }
             
             newState = Keyboard.GetState();
 
             #region movement
-            if (!isRolling)//(cooldown_DisableControls.Output())00
+            if (!isRolling && !isStunned)//(cooldown_DisableControls.Output())00
             {
                 stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
 
@@ -122,17 +134,19 @@ namespace Game
                         if (!newState.IsKeyDown(key))
                             Continue = false;
 
+                    velocity = Vector2.Zero;
+                    
                     if (Continue)
                     {
                         FrameTimer++;
 
                         if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 4)
                         {
-                            SoundManager.WalkingSounds();
+                            SoundManager.PlayWalkingSound();
                         }
                         
                         this.dir = dir.dir;
-                        this.CheckEnviorementCollision(position, Vector2.Normalize(dir.VecDir) * speed);
+                        velocity = Vector2.Normalize(dir.VecDir) * speed;
                         break;
                     }
                 }
@@ -151,14 +165,13 @@ namespace Game
 
             if (isRolling)
             {
-
                 rollTimer++;
                 FrameTimer++;
                 stamina--;
                 
                 float deltaPositionX = MathHelper.Lerp(position.X, dx, amount) - position.X;
                 float deltaPositionY = MathHelper.Lerp(position.Y, dy, amount) - position.Y;
-                CheckEnviorementCollision(position, new Vector2(deltaPositionX, deltaPositionY));
+                velocity = new Vector2(deltaPositionX, deltaPositionY);
                 currentAnimation = this.dir + 8;
             }
 
@@ -168,11 +181,16 @@ namespace Game
                 isRolling = false;
             }
 
-                #endregion
+            if (Keyboard.GetState().IsKeyDown(Keys.E))
+            {
+                velocity.X = 20;
+                isStunned = true;
+            }
+            #endregion
 
             oldState = newState;
 
-
+            CheckEnviorementCollision(position, velocity);
         }
 
         private void CheckEnviorementCollision(Vector2 currentPosition, Vector2 velocity)
