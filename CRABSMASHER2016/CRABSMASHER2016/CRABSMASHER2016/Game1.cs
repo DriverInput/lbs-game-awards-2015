@@ -42,8 +42,8 @@ namespace Game
         protected override void Initialize()
         {
 
-            Console.WriteLine("INITIALIZE DATAARRAYS, LOAD COLLISION MASKS AND SAVE THEIR DATA");
-            Console.WriteLine();
+            //Console.WriteLine("INITIALIZE DATAARRAYS, LOAD COLLISION MASKS AND SAVE THEIR DATA");
+            //Console.WriteLine();
 
             for (sbyte i = 0; i < 12; i++)
             {
@@ -52,25 +52,25 @@ namespace Game
                 collisionMasks[i].GetData<Color>(collisionsMaskDataArrays[i]);
                 collisionMasks[i].Dispose();
                 GC.Collect();
-                Console.WriteLine("Loaded, saved its data, disposed CM " + (i+1) + "/12");
+                //Console.WriteLine("Loaded, saved its data, disposed CM " + (i+1) + "/12");
                 
             }
-            Console.WriteLine("FINISHED LOADING CMs AND DATAARRAYS");
+            //Console.WriteLine("FINISHED LOADING CMs AND DATAARRAYS");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
+            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            //Console.ReadLine();
 
-            Console.WriteLine("LOAD ENIRONMENT TEXTURES");
+            //Console.WriteLine("LOAD ENIRONMENT TEXTURES");
             for (sbyte i = 1; i < 13; i++)
             {
                 environment[i - 1] = Content.Load<Texture2D>("mapParts/MapPart" + i);
             }
-            Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
+            //Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
+            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            //Console.ReadLine();
 
-            Console.WriteLine("LOAD THE REST OF THE TEXTURE");
+            //Console.WriteLine("LOAD THE REST OF THE TEXTURE");
             TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
             TextureManager.InitializeTextures.Add("CrabKing", "CrabKing");
@@ -84,12 +84,12 @@ namespace Game
 
             Player.hitBoxTexture = Content.Load<Texture2D>("hitBoxTexture");
             
-            Console.WriteLine("FINISHED LODING THE REST OF THE TEXTURES");
+            //Console.WriteLine("FINISHED LODING THE REST OF THE TEXTURES");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
+            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            //Console.ReadLine();
 
-            Console.WriteLine("CALCULATE CMrects");
+            //Console.WriteLine("CALCULATE CMrects");
             short w = 4096;
             short h = 2645;
             sbyte n = 0;
@@ -102,15 +102,15 @@ namespace Game
                     n++;
                 }
 
-            Console.WriteLine("FINISHED CALCULATING CMrects");
+            //Console.WriteLine("FINISHED CALCULATING CMrects");
 
-            Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
-            Console.ReadLine();
+            //Console.WriteLine("Currently using " + GC.GetTotalMemory(false) + " bytes");
+            //Console.ReadLine();
 
             player = new Player();
 
-            Console.WriteLine("DONE! RUN GAME!");
-            Console.ReadLine();
+            //Console.WriteLine("DONE! RUN GAME!");
+            //Console.ReadLine();
 
             base.Initialize();
         }
@@ -118,7 +118,7 @@ namespace Game
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
+            SoundManager.LoadContent(Content);
         }
 
         //float zoom = 0.8f;

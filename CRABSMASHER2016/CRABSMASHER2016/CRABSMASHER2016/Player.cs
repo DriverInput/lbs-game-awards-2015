@@ -125,6 +125,11 @@ namespace Game
                     if (Continue)
                     {
                         FrameTimer++;
+
+                        if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 4)
+                        {
+                            SoundManager.WalkingSounds();
+                        }
                         
                         this.dir = dir.dir;
                         this.CheckEnviorementCollision(position, Vector2.Normalize(dir.VecDir) * speed);
@@ -146,6 +151,7 @@ namespace Game
 
             if (isRolling)
             {
+
                 rollTimer++;
                 FrameTimer++;
                 stamina--;
