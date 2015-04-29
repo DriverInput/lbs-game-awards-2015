@@ -25,6 +25,18 @@ namespace Game
         int rollTimer;
         int rollMaxTimer;
 
+        //Rectangle Colition
+        //{
+        //    get
+        //    {
+        //        if (isRolling)
+        //        {
+                    
+        //        }
+
+        //    }
+        //}
+
         const float maxHp = 100;
         float hp = maxHp;
         const float maxStamina = 100;
@@ -51,7 +63,7 @@ namespace Game
             isRolling = false;
             maxFrameTimer = 4;
             rollTimer = 0;
-            rollMaxTimer = 25+7;
+            rollMaxTimer = 25 + 7;
             width = 146;
             height = 209;
             textureID = "player";
@@ -117,7 +129,7 @@ namespace Game
 
                 if (velocity.X == 0) isStunned = false;
             }
-            
+
             newState = Keyboard.GetState();
 
             #region movement
@@ -135,7 +147,7 @@ namespace Game
                             Continue = false;
 
                     velocity = Vector2.Zero;
-                    
+
                     if (Continue)
                     {
                         FrameTimer++;
@@ -144,7 +156,7 @@ namespace Game
                         {
                             SoundManager.PlayWalkingSound();
                         }
-                        
+
                         this.dir = dir.dir;
                         velocity = Vector2.Normalize(dir.VecDir) * speed;
                         break;
@@ -168,7 +180,7 @@ namespace Game
                 rollTimer++;
                 FrameTimer++;
                 stamina--;
-                
+
                 float deltaPositionX = MathHelper.Lerp(position.X, dx, amount) - position.X;
                 float deltaPositionY = MathHelper.Lerp(position.Y, dy, amount) - position.Y;
                 velocity = new Vector2(deltaPositionX, deltaPositionY);
