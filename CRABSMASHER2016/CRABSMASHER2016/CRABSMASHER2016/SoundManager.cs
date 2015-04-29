@@ -13,10 +13,7 @@ namespace Game
 {
     static class SoundManager
     {
-        #region jessy read this
-        //JESSY DU RÖR INTE DENNA KLASSEN FÖR DÅ KOMMER DU BARA SKRIVA OM DEN
-        #endregion
-
+        static SoundEffect tempSwordSound;
         static SoundEffect[] stepSounds = new SoundEffect[10];
 
         public static void LoadContent(ContentManager content) 
@@ -25,19 +22,26 @@ namespace Game
             {
                 stepSounds[i] = content.Load<SoundEffect>("step" + (i + 1));
             }
+            tempSwordSound = content.Load<SoundEffect>("Temp sound");
         }
 
         static int prevRandom = 0;
         static int newRandom = 0;
+        static Random rnd = new Random();
         public static void PlayWalkingSound() 
         {
-            Random rnd = new Random();
             do
             {
-              newRandom = rnd.Next(0,stepSounds.Length);
+                newRandom = rnd.Next(0,stepSounds.Length);
             } while (newRandom == prevRandom);
             prevRandom = newRandom;
+            Console.WriteLine(stepSounds[newRandom].ToString());
             stepSounds[newRandom].Play();
+        }
+
+        public static void PlaySwordSound() 
+        {
+            tempSwordSound.Play();
         }
     }
 }

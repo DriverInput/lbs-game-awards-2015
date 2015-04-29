@@ -2,15 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>spriteplaceholder.png</Source>
-      <Name>spriteplaceholder</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb</Output>
-      <Time>2015-04-09T10:00:28.2380975+02:00</Time>
-    </Item>
-    <Item>
       <Source>lil krabba spritesheet.png</Source>
       <Name>lil krabba spritesheet</Name>
       <Importer>TextureImporter</Importer>
@@ -387,6 +378,24 @@
       <Options>None</Options>
       <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\step10.xnb</Output>
       <Time>2015-04-27T15:18:06.4916277+02:00</Time>
+    </Item>
+    <Item>
+      <Source>spriteplaceholder2.png</Source>
+      <Name>spriteplaceholder2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder2.xnb</Output>
+      <Time>2015-04-29T12:28:20.8832057+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Temp sound.wav</Source>
+      <Name>Temp sound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Temp sound.xnb</Output>
+      <Time>2015-04-29T13:13:17.3806446+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

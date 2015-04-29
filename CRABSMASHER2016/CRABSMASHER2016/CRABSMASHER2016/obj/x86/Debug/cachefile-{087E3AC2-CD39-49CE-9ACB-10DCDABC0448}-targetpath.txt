@@ -1,4 +1,3 @@
-Content\spriteplaceholder.xnb
 Content\lil krabba spritesheet.xnb
 Content\CrabArm.xnb
 Content\CrabKing.xnb
@@ -18,6 +17,7 @@ Content\CollisionMasks\CM6.xnb
 Content\CollisionMasks\CM7.xnb
 Content\CollisionMasks\CM8.xnb
 Content\CollisionMasks\CM9.xnb
+Content\hitBoxTexture.xnb
 Content\mapParts\MapPart1.xnb
 Content\mapParts\MapPart10.xnb
 Content\mapParts\MapPart11.xnb
@@ -30,7 +30,6 @@ Content\mapParts\MapPart6.xnb
 Content\mapParts\MapPart7.xnb
 Content\mapParts\MapPart8.xnb
 Content\mapParts\MapPart9.xnb
-Content\hitBoxTexture.xnb
 Content\step1.xnb
 Content\step2.xnb
 Content\step3.xnb
@@ -41,3 +40,5 @@ Content\step7.xnb
 Content\step8.xnb
 Content\step9.xnb
 Content\step10.xnb
+Content\spriteplaceholder2.xnb
+Content\Temp sound.xnb

@@ -39,6 +39,7 @@ namespace Game
         public static Texture2D hitBoxTexture;
         bool isRolling;
         bool isStunned;
+        bool isAttacking;
 
         public Player()
         {
@@ -121,7 +122,7 @@ namespace Game
             newState = Keyboard.GetState();
 
             #region movement
-            if (!isRolling && !isStunned)//(cooldown_DisableControls.Output())00
+            if (!isRolling && !isStunned && cooldown_DisableControls.Output())
             {
                 stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
 
@@ -140,7 +141,7 @@ namespace Game
                     {
                         FrameTimer++;
 
-                        if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 4)
+                        if (FrameTimer == 0 && (CurrentFrame == 0 || CurrentFrame == 4))
                         {
                             SoundManager.PlayWalkingSound();
                         }
@@ -161,6 +162,14 @@ namespace Game
                     dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength * 0.8f;
                 }
+
+                if (newState.IsKeyDown(Keys.Enter) && oldState.IsKeyUp(Keys.Enter) && !isAttacking && stamina >= rollMaxTimer - 10)
+                {
+                    cooldown_DisableControls.Use();
+                    velocity = Vector2.Zero;
+                    isAttacking = true;
+                    SoundManager.PlaySwordSound();
+                }
             }
 
             if (isRolling)
@@ -175,10 +184,19 @@ namespace Game
                 currentAnimation = this.dir + 8;
             }
 
+            if (isAttacking)
+            {
+                rollTimer++;
+                FrameTimer++;
+                stamina--;
+                CurrentFrame += 9;
+            }
+
             if (rollTimer == rollMaxTimer)
             {
                 rollTimer = 0;
                 isRolling = false;
+                isAttacking = false;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.E))
