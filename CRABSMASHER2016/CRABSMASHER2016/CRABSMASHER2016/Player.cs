@@ -167,7 +167,7 @@ namespace Game
             {
                 rollTimer++;
                 FrameTimer++;
-                stamina -= 1.6f;
+                stamina -= 2;
                 
                 float deltaPositionX = MathHelper.Lerp(position.X, dx, amount) - position.X;
                 float deltaPositionY = MathHelper.Lerp(position.Y, dy, amount) - position.Y;
