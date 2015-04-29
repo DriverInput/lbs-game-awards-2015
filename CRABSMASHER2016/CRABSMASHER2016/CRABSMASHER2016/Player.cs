@@ -39,6 +39,7 @@ namespace Game
         public static Texture2D hitBoxTexture;
         bool isRolling;
         bool isStunned;
+        bool isAttacking;
 
         public Player()
         {
@@ -51,7 +52,7 @@ namespace Game
             isRolling = false;
             maxFrameTimer = 4;
             rollTimer = 0;
-            rollMaxTimer = 25+7;
+            rollMaxTimer = 25 + 7;
             width = 146;
             height = 209;
             textureID = "player";
@@ -117,11 +118,11 @@ namespace Game
 
                 if (velocity.X == 0) isStunned = false;
             }
-            
+
             newState = Keyboard.GetState();
 
             #region movement
-            if (!isRolling && !isStunned)//(cooldown_DisableControls.Output())00
+            if (!isRolling && !isStunned && cooldown_DisableControls.Output())
             {
                 stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
 
@@ -135,16 +136,16 @@ namespace Game
                             Continue = false;
 
                     velocity = Vector2.Zero;
-                    
+
                     if (Continue)
                     {
                         FrameTimer++;
 
-                        if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 4)
+                        if (FrameTimer == 0 && (CurrentFrame == 0 || CurrentFrame == 4))
                         {
                             SoundManager.PlayWalkingSound();
                         }
-                        
+
                         this.dir = dir.dir;
                         velocity = Vector2.Normalize(dir.VecDir) * speed;
                         break;
@@ -161,24 +162,41 @@ namespace Game
                     dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength * 0.8f;
                 }
+
+                if (newState.IsKeyDown(Keys.Enter) && oldState.IsKeyUp(Keys.Enter) && !isAttacking && stamina >= rollMaxTimer - 10)
+                {
+                    cooldown_DisableControls.Use();
+                    velocity = Vector2.Zero;
+                    isAttacking = true;
+                    SoundManager.PlaySwordSound();
+                }
             }
 
             if (isRolling)
             {
                 rollTimer++;
                 FrameTimer++;
-                stamina -= 2;
-                
+                stamina--;
+
                 float deltaPositionX = MathHelper.Lerp(position.X, dx, amount) - position.X;
                 float deltaPositionY = MathHelper.Lerp(position.Y, dy, amount) - position.Y;
                 velocity = new Vector2(deltaPositionX, deltaPositionY);
                 currentAnimation = this.dir + 8;
             }
 
+            if (isAttacking)
+            {
+                rollTimer++;
+                FrameTimer++;
+                stamina--;
+                CurrentFrame += 9;
+            }
+
             if (rollTimer == rollMaxTimer)
             {
                 rollTimer = 0;
                 isRolling = false;
+                isAttacking = false;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.E))
