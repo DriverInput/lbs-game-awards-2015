@@ -18,6 +18,7 @@ Content\CollisionMasks\CM6.xnb
 Content\CollisionMasks\CM7.xnb
 Content\CollisionMasks\CM8.xnb
 Content\CollisionMasks\CM9.xnb
+Content\hitBoxTexture.xnb
 Content\mapParts\MapPart1.xnb
 Content\mapParts\MapPart10.xnb
 Content\mapParts\MapPart11.xnb
@@ -30,7 +31,6 @@ Content\mapParts\MapPart6.xnb
 Content\mapParts\MapPart7.xnb
 Content\mapParts\MapPart8.xnb
 Content\mapParts\MapPart9.xnb
-Content\hitBoxTexture.xnb
 Content\step1.xnb
 Content\step2.xnb
 Content\step3.xnb

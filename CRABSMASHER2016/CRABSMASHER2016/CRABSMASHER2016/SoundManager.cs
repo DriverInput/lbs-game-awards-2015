@@ -17,6 +17,7 @@ namespace Game
         //JESSY DU RÖR INTE DENNA KLASSEN FÖR DÅ KOMMER DU BARA SKRIVA OM DEN
         #endregion
 
+        static SoundEffect tempSwordSound;
         static SoundEffect[] stepSounds = new SoundEffect[10];
 
         public static void LoadContent(ContentManager content) 
@@ -25,6 +26,7 @@ namespace Game
             {
                 stepSounds[i] = content.Load<SoundEffect>("step" + (i + 1));
             }
+            tempSwordSound = content.Load<SoundEffect>("Temp sound");
         }
 
         static int prevRandom = 0;
@@ -38,6 +40,11 @@ namespace Game
             } while (newRandom == prevRandom);
             prevRandom = newRandom;
             stepSounds[newRandom].Play();
+        }
+
+        public static void PlaySwordSound() 
+        {
+            tempSwordSound.Play();
         }
     }
 }
