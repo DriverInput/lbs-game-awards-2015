@@ -29,6 +29,7 @@ Content\mapParts\MapPart6.xnb
 Content\mapParts\MapPart7.xnb
 Content\mapParts\MapPart8.xnb
 Content\mapParts\MapPart9.xnb
+<<<<<<< HEAD
 Content\hitBoxTexture.xnb
 Content\cliffs.xnb
 Content\valv.xnb
@@ -43,3 +44,25 @@ Content\stepSounds\step7.xnb
 Content\stepSounds\step8.xnb
 Content\stepSounds\step9.xnb
 Content\spriteplaceholder2.xnb
+=======
+Content\step1.xnb
+Content\step2.xnb
+Content\step3.xnb
+Content\step4.xnb
+Content\step5.xnb
+Content\step6.xnb
+Content\step7.xnb
+Content\step8.xnb
+Content\step9.xnb
+Content\step10.xnb
+Content\magical sound 1.xnb
+Content\magical sound 2.xnb
+Content\magical sound 3.xnb
+Content\magical sound 4.xnb
+Content\magical sound 5.xnb
+Content\magical sound 6.xnb
+Content\Sword 4.xnb
+Content\Sword 5.xnb
+Content\Sword 2.xnb
+Content\Sword 3.xnb
+>>>>>>> origin/master
