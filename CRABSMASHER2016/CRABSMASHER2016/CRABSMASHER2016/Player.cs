@@ -30,7 +30,7 @@ namespace Game
         const float maxStamina = 100;
         float stamina = maxStamina;
 
-        public Rectangle Colition 
+        public Rectangle Collision 
         {
             get 
             {
@@ -211,7 +211,7 @@ namespace Game
                     {
                         FrameTimer++;
 
-                        if (FrameTimer == 0 && (CurrentFrame == 0 || CurrentFrame == 4))
+                        if (FrameTimer == 0 && (CurrentFrame == 0 || CurrentFrame == 3))
                         {
                             SoundManager.PlayWalkingSound();
                         }

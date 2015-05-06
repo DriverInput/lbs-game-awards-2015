@@ -31,13 +31,6 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="spriteplaceholder.png">
-      <Name>spriteplaceholder</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="lil krabba spritesheet.png">
       <Name>lil krabba spritesheet</Name>
       <Importer>TextureImporter</Importer>
@@ -154,11 +147,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="mapParts\MapPart1.jpg">
-      <Name>MapPart1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="mapParts\MapPart10.jpg">
       <Name>MapPart10</Name>
       <Importer>TextureImporter</Importer>
@@ -216,73 +204,81 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="step1.wav">
+    <Compile Include="cliffs.png">
+      <Name>cliffs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="valv.png">
+      <Name>valv</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="stepSounds\step1.wav">
       <Name>step1</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step2.wav">
+    <Compile Include="stepSounds\step10.wav">
+      <Name>step10</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="stepSounds\step2.wav">
       <Name>step2</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step3.wav">
+    <Compile Include="stepSounds\step3.wav">
       <Name>step3</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step4.wav">
+    <Compile Include="stepSounds\step4.wav">
       <Name>step4</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step5.wav">
+    <Compile Include="stepSounds\step5.wav">
       <Name>step5</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step6.wav">
+    <Compile Include="stepSounds\step6.wav">
       <Name>step6</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step7.wav">
+    <Compile Include="stepSounds\step7.wav">
       <Name>step7</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step8.wav">
+    <Compile Include="stepSounds\step8.wav">
       <Name>step8</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="step9.wav">
+    <Compile Include="stepSounds\step9.wav">
       <Name>step9</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="step10.wav">
-      <Name>step10</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
+    <Compile Include="spriteplaceholder2.png">
+      <Name>spriteplaceholder2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mapParts\mapPart1.jpg">
+      <Name>mapPart1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

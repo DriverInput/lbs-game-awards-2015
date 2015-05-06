@@ -83,7 +83,7 @@ namespace Game
 
         public int maxFrameTimer;
 
-        public int maxFrame { get { return (TextureManager.Textures[textureID].Width / width) - 1; } }
+        public int maxFrame { get { return (TextureManager.Textures[textureID].Width / width)/2 - 1; } }
         public int maxAnimation { get { return (TextureManager.Textures[textureID].Height / height) - 1; } }
 
         public SpriteEffects spriteEffect = SpriteEffects.None;

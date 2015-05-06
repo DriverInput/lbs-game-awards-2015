@@ -24,7 +24,7 @@ namespace Game
         {
             for (int i = 0; i < stepSounds.Length; i++)
             {
-                stepSounds[i] = content.Load<SoundEffect>("step" + (i + 1));
+                stepSounds[i] = content.Load<SoundEffect>("stepSounds/step" + (i + 1));
             }
             tempSwordSound = content.Load<SoundEffect>("Temp sound");
         }

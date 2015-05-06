@@ -34,7 +34,7 @@ namespace Game
             position += velocity;
 
             //Rectangle playerOffSetRectangle = new Rectangle(player.rectangle.X, player.rectangle.Y, player.rectangle.Width, player.rectangle.Height);
-            player.position = RectangleToRectangle(player.Colition, this.rectangle);// RectangleToRectangle(player.position.X, player.position.Y, player.width, player.height, position.X, position.Y, width, height);
+            //player.position = RectangleToRectangle(player.Colition, this.rectangle);// RectangleToRectangle(player.position.X, player.position.Y, player.width, player.height, position.X, position.Y, width, height);
 
             FrameTimer++;
         }

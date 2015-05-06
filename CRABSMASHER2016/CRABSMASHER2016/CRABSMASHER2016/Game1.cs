@@ -11,6 +11,17 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
+    struct EnvDetails
+    {
+        public Vector2 pos;
+        public Texture2D tex;
+
+        public EnvDetails(Vector2 newPos, Texture2D newTex)
+        {
+            pos = newPos;
+            tex = newTex;
+        }
+    }
 
     public class Main : Microsoft.Xna.Framework.Game
     {
@@ -28,8 +39,8 @@ namespace Game
         Texture2D[] collisionMasks = new Texture2D[12];
         public static Color[][] collisionsMaskDataArrays = new Color[12][];
         Texture2D[] environment = new Texture2D[12];
-
-        bool debugStart = false;
+        List<EnvDetails> envDetails = new List<EnvDetails>();
+        bool debugStart = true;
 
         public Main()
         {
@@ -70,6 +81,8 @@ namespace Game
             {
                 environment[i - 1] = Content.Load<Texture2D>("mapParts/MapPart" + i);
             }
+            envDetails.Add(new EnvDetails(new Vector2(0, 1633), Content.Load<Texture2D>("cliffs")));
+            envDetails.Add(new EnvDetails(new Vector2(3300, 1633-1), Content.Load<Texture2D>("valv")));
             if (debugStart)
             {
                 Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
@@ -79,7 +92,7 @@ namespace Game
 
                 Console.WriteLine("LOAD THE REST OF THE TEXTURE");
             }
-            TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
+            TextureManager.InitializeTextures.Add("player", "spriteplaceholder2");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
             TextureManager.InitializeTextures.Add("CrabKing", "CrabKing");
             TextureManager.InitializeTextures.Add("CrabArm", "CrabArm");
@@ -190,7 +203,7 @@ namespace Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.get_transformation(GraphicsDevice));
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend,null, null, null, null, camera.get_transformation(GraphicsDevice));
 
             for (int i = 0; i < 12; i++)
             {
@@ -202,6 +215,10 @@ namespace Game
             crabKing.Draw(spriteBatch);
             crabKing.leftArm.Draw(spriteBatch);
             crabKing.rigthArm.Draw(spriteBatch);
+
+            foreach (EnvDetails env in envDetails)
+                spriteBatch.Draw(env.tex, env.pos, Color.White);
+
             spriteBatch.End();
 
             spriteBatch.Begin();
