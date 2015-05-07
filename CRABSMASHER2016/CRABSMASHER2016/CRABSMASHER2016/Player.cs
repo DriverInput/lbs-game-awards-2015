@@ -42,6 +42,76 @@ namespace Game
         const float maxStamina = 100;
         float stamina = maxStamina;
 
+        public Rectangle Colition 
+        {
+            get 
+            {
+                if (isRolling)
+                {
+                    switch (dir)
+                    {
+                     case 0:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    case 1:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    case 2:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    case 3:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    case 4:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    case 5:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    case 6:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    case 7:
+	                    return new Rectangle(0,0,0,0);
+	                    
+                    }
+                }
+                else
+                {
+                    switch (dir)
+                    {
+                        case 0:
+                            return new Rectangle(0, 0, 0, 0);
+
+                        case 1:
+                            return new Rectangle(0, 0, 0, 0);
+
+                        case 2:
+                            return new Rectangle(0, 0, 0, 0);
+
+                        case 3:
+                            return new Rectangle(0, 0, 0, 0);
+
+                        case 4:
+                            return new Rectangle(0, 0, 0, 0);
+
+                        case 5:
+                            return new Rectangle(0, 0, 0, 0);
+
+                        case 6:
+                            return new Rectangle(0, 0, 0, 0);
+
+                        case 7:
+                            return new Rectangle(0, 0, 0, 0);
+
+                    }
+                }
+
+                return new Rectangle(0, 0, 0, 0);
+            }
+        }
+
+
         Dir[] dirs;
 
         Color[] textureData;

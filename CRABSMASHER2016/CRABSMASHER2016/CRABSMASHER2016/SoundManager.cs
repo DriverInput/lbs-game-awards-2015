@@ -17,6 +17,11 @@ namespace Game
         //JESSY DU RÖR INTE DENNA KLASSEN FÖR DÅ KOMMER DU BARA SKRIVA OM DEN
         #endregion
 
+<<<<<<< HEAD
+=======
+        static SoundEffect[] magicalSounds = new SoundEffect[6];
+        //static SoundEffect[] swordSounds = new SoundEffect[4];
+>>>>>>> 876770ef1090e811150016bccbe5eb7b8efe56c6
         static SoundEffect[] stepSounds = new SoundEffect[10];
 
         public static void LoadContent(ContentManager content) 
@@ -25,6 +30,17 @@ namespace Game
             {
                 stepSounds[i] = content.Load<SoundEffect>("step" + (i + 1));
             }
+<<<<<<< HEAD
+=======
+            //for (int i = 0; i < swordSounds.Length; i++)
+            //{
+            //    swordSounds[i] = content.Load<SoundEffect>("Sword " + (i + 2));
+            //}
+            for (int i = 0; i < magicalSounds.Length; i++)
+            {
+                magicalSounds[i] = content.Load<SoundEffect>("magical sound " + (i + 1));
+            }
+>>>>>>> 876770ef1090e811150016bccbe5eb7b8efe56c6
         }
 
         static int prevRandom = 0;
@@ -39,5 +55,25 @@ namespace Game
             prevRandom = newRandom;
             stepSounds[newRandom].Play();
         }
+<<<<<<< HEAD
+=======
+
+        static int prevRandom2 = 0;
+        static int newRandom2 = 0;
+        public static void PlaySwordSound() 
+        {
+            Random rnd = new Random();
+            Random rnd2 = new Random();
+            do
+            {
+                //newRandom = rnd.Next(0, swordSounds.Length);
+                newRandom2 = rnd.Next(0, magicalSounds.Length);
+            } while (newRandom == prevRandom && newRandom2 == prevRandom2);
+            prevRandom = newRandom;
+            prevRandom2 = newRandom2;
+            //swordSounds[newRandom].Play();
+            magicalSounds[newRandom2].Play();
+        }
+>>>>>>> 876770ef1090e811150016bccbe5eb7b8efe56c6
     }
 }
