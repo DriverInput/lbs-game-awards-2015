@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    class Object
+    public class Object
     {
         public Vector2 position;
         public Rectangle sourceRectangle

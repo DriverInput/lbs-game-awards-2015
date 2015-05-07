@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    class Player : Object
+    public class Player : Object
     {
         KeyboardState newState, oldState;
         public float rollLength;
@@ -107,8 +107,8 @@ namespace Game
         Cooldown cooldown_DisableControls;
         //Cooldown cooldown_frame;
         public static Texture2D hitBoxTexture;
-        bool isRolling;
-        bool isStunned;
+        public bool isRolling;
+        public bool isStunned;
         bool isAttacking;
 
         public Player()
@@ -118,7 +118,7 @@ namespace Game
             amount = 0.08f; // set bether value later
             rollLength = 128 * 4f; // set more exact values later
             speed = 7;
-            position = new Vector2(2500, 2000); // set bether position later
+            position = new Vector2(0, 0);//new Vector2(2500, 2000); // set bether position later
             isRolling = false;
             maxFrameTimer = 4;
             rollTimer = 0;
@@ -291,12 +291,12 @@ namespace Game
             Rectangle hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
             for (int i = 0; i < 12; i++)
             {
-                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
-                {
-                    break;
+                //if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                //{
+                //    break;
 
-                }
-                else if (i == 11)
+                //}
+                //else if (i == 11)
                 {
                     nextPosition = futurePosition;
                 }
@@ -306,12 +306,12 @@ namespace Game
             hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
             for (int i = 0; i < 12; i++)
             {
-                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
-                {
-                    break;
+                //if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                //{
+                //    break;
 
-                }
-                else if (i == 11)
+                //}
+                //else if (i == 11)
                 {
                     nextPosition = futurePosition;
                 }

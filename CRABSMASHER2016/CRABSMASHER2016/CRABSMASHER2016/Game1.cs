@@ -28,7 +28,7 @@ namespace Game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Player player;
+        public static Player player;
         MiniCrab miniCrab = new MiniCrab();
         CrabKing crabKing = new CrabKing();
         Camera camera = new Camera();
@@ -40,7 +40,7 @@ namespace Game
         public static Color[][] collisionsMaskDataArrays = new Color[12][];
         Texture2D[] environment = new Texture2D[12];
         List<EnvDetails> envDetails = new List<EnvDetails>();
-        bool debugStart = true;
+        bool debugStart = false;
 
         public Main()
         {
@@ -163,7 +163,7 @@ namespace Game
             //    zoom += 0.01f;
 
             //camera.Zoom = zoom;
-            crabKing.Update(player);
+            crabKing.Update();
             base.Update(gameTime);
         }
 

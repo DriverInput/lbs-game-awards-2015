@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\mapParts\MapPart1.xnb</Output>
-      <Time>2015-05-05T13:03:56.2021721+02:00</Time>
+      <Time>2015-05-06T12:48:32.795915+02:00</Time>
     </Item>
     <Item>
       <Source>mapParts\MapPart10.jpg</Source>
@@ -296,7 +296,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\cliffs.xnb</Output>
-      <Time>2015-04-30T11:03:40.9730113+02:00</Time>
+      <Time>2015-05-06T12:48:32.648915+02:00</Time>
     </Item>
     <Item>
       <Source>valv.png</Source>
@@ -305,7 +305,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\valv.xnb</Output>
-      <Time>2015-04-30T11:03:40.9886115+02:00</Time>
+      <Time>2015-05-06T12:48:33.339915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step1.wav</Source>
@@ -314,7 +314,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step1.xnb</Output>
-      <Time>2015-04-30T13:44:42.3866787+02:00</Time>
+      <Time>2015-05-06T12:48:32.959915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step10.wav</Source>
@@ -323,7 +323,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step10.xnb</Output>
-      <Time>2015-04-30T13:44:42.4246825+02:00</Time>
+      <Time>2015-05-06T12:48:33.010915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step2.wav</Source>
@@ -332,7 +332,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step2.xnb</Output>
-      <Time>2015-04-30T13:44:42.3906791+02:00</Time>
+      <Time>2015-05-06T12:48:33.022915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step3.wav</Source>
@@ -341,7 +341,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step3.xnb</Output>
-      <Time>2015-04-30T13:44:42.3936794+02:00</Time>
+      <Time>2015-05-06T12:48:33.034915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step4.wav</Source>
@@ -350,7 +350,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step4.xnb</Output>
-      <Time>2015-04-30T13:44:42.3966797+02:00</Time>
+      <Time>2015-05-06T12:48:33.047915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step5.wav</Source>
@@ -359,7 +359,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step5.xnb</Output>
-      <Time>2015-04-30T13:44:42.3986799+02:00</Time>
+      <Time>2015-05-06T12:48:33.175915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step6.wav</Source>
@@ -368,7 +368,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step6.xnb</Output>
-      <Time>2015-04-30T13:44:42.4046805+02:00</Time>
+      <Time>2015-05-06T12:48:33.187915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step7.wav</Source>
@@ -377,7 +377,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step7.xnb</Output>
-      <Time>2015-04-30T13:44:42.4076808+02:00</Time>
+      <Time>2015-05-06T12:48:33.201915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step8.wav</Source>
@@ -386,7 +386,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step8.xnb</Output>
-      <Time>2015-04-30T13:44:42.4126813+02:00</Time>
+      <Time>2015-05-06T12:48:33.214915+02:00</Time>
     </Item>
     <Item>
       <Source>stepSounds\step9.wav</Source>
@@ -395,7 +395,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step9.xnb</Output>
-      <Time>2015-04-30T13:44:42.4216822+02:00</Time>
+      <Time>2015-05-06T12:48:33.229915+02:00</Time>
     </Item>
     <Item>
       <Source>spriteplaceholder2.png</Source>
@@ -404,7 +404,97 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder2.xnb</Output>
-      <Time>2015-04-30T16:05:29.3512323+02:00</Time>
+      <Time>2015-05-06T12:48:32.943915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>magical sound 1.wav</Source>
+      <Name>magical sound 1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 1.xnb</Output>
+      <Time>2015-05-06T12:48:37.927915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>magical sound 2.wav</Source>
+      <Name>magical sound 2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 2.xnb</Output>
+      <Time>2015-05-06T12:48:37.962915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>magical sound 3.wav</Source>
+      <Name>magical sound 3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 3.xnb</Output>
+      <Time>2015-05-06T12:48:38.011915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>magical sound 4.wav</Source>
+      <Name>magical sound 4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 4.xnb</Output>
+      <Time>2015-05-06T12:48:38.046915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>magical sound 5.wav</Source>
+      <Name>magical sound 5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 5.xnb</Output>
+      <Time>2015-05-06T12:48:38.075915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>magical sound 6.wav</Source>
+      <Name>magical sound 6</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 6.xnb</Output>
+      <Time>2015-05-06T12:48:38.113915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sword 4.wav</Source>
+      <Name>Sword 4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 4.xnb</Output>
+      <Time>2015-05-06T12:48:37.888915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sword 5.wav</Source>
+      <Name>Sword 5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 5.xnb</Output>
+      <Time>2015-05-06T12:48:37.898915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sword 2.wav</Source>
+      <Name>Sword 2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 2.xnb</Output>
+      <Time>2015-05-06T12:48:37.862915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sword 3.wav</Source>
+      <Name>Sword 3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 3.xnb</Output>
+      <Time>2015-05-06T12:48:37.876915+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
