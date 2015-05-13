@@ -19,6 +19,7 @@ namespace Game
 
         static SoundEffect[] magicalSounds = new SoundEffect[6];
         //static SoundEffect[] swordSounds = new SoundEffect[4];
+
         static SoundEffect[] stepSounds = new SoundEffect[10];
 
         public static void LoadContent(ContentManager content) 

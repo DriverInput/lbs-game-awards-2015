@@ -41,6 +41,7 @@ namespace Game
         Texture2D[] environment = new Texture2D[12];
         List<EnvDetails> envDetails = new List<EnvDetails>();
         bool debugStart = false;
+        private float zoom;
 
         public Main()
         {
@@ -157,12 +158,12 @@ namespace Game
             player.Update();
             miniCrab.Update(player);
             camera.Pos = player.position + new Vector2(player.width / 2, player.height / 2);
-            //if (Keyboard.GetState().IsKeyDown(Keys.Q))
-            //    zoom -= 0.01f;
-            //if (Keyboard.GetState().IsKeyDown(Keys.E))
-            //    zoom += 0.01f;
+            if (Keyboard.GetState().IsKeyDown(Keys.Q))
+                zoom -= 0.01f;
+            if (Keyboard.GetState().IsKeyDown(Keys.E))
+                zoom += 0.01f;
 
-            //camera.Zoom = zoom;
+            camera.Zoom = zoom;
             crabKing.Update();
             base.Update(gameTime);
         }
