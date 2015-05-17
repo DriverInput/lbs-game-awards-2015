@@ -18,9 +18,12 @@ namespace Game
         #endregion
 
         static SoundEffect[] magicalSounds = new SoundEffect[6];
-        //static SoundEffect[] swordSounds = new SoundEffect[4];
-
         static SoundEffect[] stepSounds = new SoundEffect[10];
+        static Vector2[] soundPoints = new Vector2[]{
+            new Vector2(1300,500),
+            new Vector2(3000,5200),
+            new Vector2(10000,5000)
+        };
 
         public static void LoadContent(ContentManager content) 
         {

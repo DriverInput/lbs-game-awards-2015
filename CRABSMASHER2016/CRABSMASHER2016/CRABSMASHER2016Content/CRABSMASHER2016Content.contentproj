@@ -268,13 +268,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="spriteplaceholder2.png">
-      <Name>spriteplaceholder2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="mapParts\mapPart1.jpg">
       <Name>mapPart1</Name>
       <Importer>TextureImporter</Importer>
@@ -335,6 +328,13 @@
       <Name>Sword 3</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="spriteplaceholder.png">
+      <Name>spriteplaceholder</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

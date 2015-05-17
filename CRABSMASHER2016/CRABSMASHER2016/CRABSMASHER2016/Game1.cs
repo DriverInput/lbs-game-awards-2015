@@ -93,7 +93,7 @@ namespace Game
 
                 Console.WriteLine("LOAD THE REST OF THE TEXTURE");
             }
-            TextureManager.InitializeTextures.Add("player", "spriteplaceholder2");
+            TextureManager.InitializeTextures.Add("player", "spriteplaceholder");
             TextureManager.InitializeTextures.Add("minicrab", "lil krabba spritesheet");
             TextureManager.InitializeTextures.Add("CrabKing", "CrabKing");
             TextureManager.InitializeTextures.Add("CrabArm", "CrabArm");
