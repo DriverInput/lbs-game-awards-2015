@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    class Player : Object
+    public class Player : Object
     {
         KeyboardState newState, oldState;
         public float rollLength;
@@ -25,12 +25,24 @@ namespace Game
         int rollTimer;
         int rollMaxTimer;
 
+        //Rectangle Colition
+        //{
+        //    get
+        //    {
+        //        if (isRolling)
+        //        {
+                    
+        //        }
+
+        //    }
+        //}
+
         const float maxHp = 100;
         float hp = maxHp;
         const float maxStamina = 100;
         float stamina = maxStamina;
 
-        public Rectangle Colition 
+        public Rectangle Collision 
         {
             get 
             {
@@ -107,8 +119,9 @@ namespace Game
         Cooldown cooldown_DisableControls;
         //Cooldown cooldown_frame;
         public static Texture2D hitBoxTexture;
-        bool isRolling;
-        bool isStunned;
+
+        public bool isRolling;
+        public bool isStunned;
         bool isAttacking;
 
         public Player()
@@ -173,7 +186,6 @@ namespace Game
 
         public void Update()
         {
-
             cooldown_DisableControls.Update();
             bar.update(hp / maxHp, stamina / maxStamina);
 
@@ -192,7 +204,7 @@ namespace Game
             newState = Keyboard.GetState();
 
             #region movement
-            if (!isRolling && !isStunned && cooldown_DisableControls.Output())
+            if (!isRolling && !isStunned)//(cooldown_DisableControls.Output())00
             {
                 stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
 
@@ -210,12 +222,13 @@ namespace Game
                     if (Continue)
                     {
                         FrameTimer++;
+                        
 
-                        if (FrameTimer == 0 && (CurrentFrame == 0 || CurrentFrame == 4))
+                        if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 4)
                         {
                             SoundManager.PlayWalkingSound();
                         }
-
+                        Console.WriteLine(position);
                         this.dir = dir.dir;
                         velocity = Vector2.Normalize(dir.VecDir) * speed;
                         break;
@@ -232,14 +245,6 @@ namespace Game
                     dx = position.X + (float)Math.Cos(MathHelper.ToRadians(dir * 45)) * rollLength;
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength * 0.8f;
                 }
-
-                if (newState.IsKeyDown(Keys.Enter) && oldState.IsKeyUp(Keys.Enter) && !isAttacking && stamina >= rollMaxTimer - 10)
-                {
-                    cooldown_DisableControls.Use();
-                    velocity = Vector2.Zero;
-                    isAttacking = true;
-                    SoundManager.PlaySwordSound();
-                }
             }
 
             if (isRolling)
@@ -254,19 +259,10 @@ namespace Game
                 currentAnimation = this.dir + 8;
             }
 
-            if (isAttacking)
-            {
-                rollTimer++;
-                FrameTimer++;
-                stamina--;
-                CurrentFrame += 9;
-            }
-
             if (rollTimer == rollMaxTimer)
             {
                 rollTimer = 0;
                 isRolling = false;
-                isAttacking = false;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.E))
@@ -287,37 +283,37 @@ namespace Game
             Vector2 velocityByY = new Vector2(0, velocity.Y);
             Vector2 nextPosition = position;
 
-            Vector2 futurePosition = nextPosition + velocityByX;
+            Vector2 futurePosition = nextPosition + velocity;
             Rectangle hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
             for (int i = 0; i < 12; i++)
             {
-                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
-                {
-                    break;
+                //if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                //{
+                //    break;
 
-                }
-                else if (i == 11)
-                {
-                    nextPosition = futurePosition;
-                }
+                //}
+                //else if (i == 11)
+                //{
+                //    nextPosition = futurePosition;
+                //}
             }
 
-            futurePosition = nextPosition + velocityByY;
+            //futurePosition = nextPosition + velocityByY;
             hitBox = new Rectangle((int)futurePosition.X, (int)futurePosition.Y + rectangle.Height / 2, hitBoxTexture.Width, hitBoxTexture.Height);
             for (int i = 0; i < 12; i++)
             {
-                if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
-                {
-                    break;
+                //if (IntersectPixels(hitBox, textureData, Main.collisionMaskRects[i], Main.collisionsMaskDataArrays[i]))
+                //{
+                //    break;
 
-                }
-                else if (i == 11)
-                {
-                    nextPosition = futurePosition;
-                }
+                //}
+                //else if (i == 11)
+                //{
+                //    nextPosition = futurePosition;
+                //}
             }
 
-            position = nextPosition;
+            position = futurePosition;
         }
 
         private struct Dir

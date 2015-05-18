@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
-    class StatsBar
+    public class StatsBar
     {
         Vector2 position = new Vector2(0, 0);
 

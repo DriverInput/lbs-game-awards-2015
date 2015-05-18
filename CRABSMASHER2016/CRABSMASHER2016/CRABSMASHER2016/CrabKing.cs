@@ -27,11 +27,11 @@ namespace Game
             rigthArm = new CrabArm(position, SpriteEffects.FlipHorizontally);
         }
 
-        public void Update(Player player)
+        public void Update()
         {
             CurrentFrame++;
-            leftArm.Update(player);
-            rigthArm.Update(player);
+            leftArm.Update();
+            rigthArm.Update();
         }
     }
 }

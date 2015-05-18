@@ -22,16 +22,23 @@ namespace Game
             textureID = "CrabArm";
         }
 
-        public void Update(Player player)
+        public void Update()
         {
-            if (player.rectangle.Intersects(rectangle))
+            if (Main.player.rectangle.Intersects(rectangle))
             {
                 CurrentFrame++;
-                if (CurrentFrame == 7)
+                if (spriteEffect == SpriteEffects.None)
                 {
-                    
-                    CurrentFrame = 0;
+                    Main.player.velocity.X = -16;
                 }
+                else
+                {
+                    Main.player.velocity.X = 16;
+                }
+                
+                Main.player.isStunned = true;
+                Main.player.isRolling = false;
+                Main.player.CurrentFrame = 0;
             }
             else
             {

@@ -11,13 +11,24 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Game
 {
+    struct EnvDetails
+    {
+        public Vector2 pos;
+        public Texture2D tex;
+
+        public EnvDetails(Vector2 newPos, Texture2D newTex)
+        {
+            pos = newPos;
+            tex = newTex;
+        }
+    }
 
     public class Main : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Player player;
+        public static Player player;
         MiniCrab miniCrab = new MiniCrab();
         CrabKing crabKing = new CrabKing();
         Camera camera = new Camera();
@@ -28,8 +39,9 @@ namespace Game
         Texture2D[] collisionMasks = new Texture2D[12];
         public static Color[][] collisionsMaskDataArrays = new Color[12][];
         Texture2D[] environment = new Texture2D[12];
-
+        List<EnvDetails> envDetails = new List<EnvDetails>();
         bool debugStart = false;
+        private float zoom;
 
         public Main()
         {
@@ -70,6 +82,8 @@ namespace Game
             {
                 environment[i - 1] = Content.Load<Texture2D>("mapParts/MapPart" + i);
             }
+            envDetails.Add(new EnvDetails(new Vector2(0, 1633), Content.Load<Texture2D>("cliffs")));
+            envDetails.Add(new EnvDetails(new Vector2(3300, 1633-1), Content.Load<Texture2D>("valv")));
             if (debugStart)
             {
                 Console.WriteLine("FINISHED LODING ENVIRONMENT TEXTURES");
@@ -144,13 +158,13 @@ namespace Game
             player.Update();
             miniCrab.Update(player);
             camera.Pos = player.position + new Vector2(player.width / 2, player.height / 2);
-            //if (Keyboard.GetState().IsKeyDown(Keys.Q))
-            //    zoom -= 0.01f;
-            //if (Keyboard.GetState().IsKeyDown(Keys.E))
-            //    zoom += 0.01f;
+            if (Keyboard.GetState().IsKeyDown(Keys.Q))
+                zoom -= 0.01f;
+            if (Keyboard.GetState().IsKeyDown(Keys.E))
+                zoom += 0.01f;
 
-            //camera.Zoom = zoom;
-            crabKing.Update(player);
+            camera.Zoom = zoom;
+            crabKing.Update();
             base.Update(gameTime);
         }
 
@@ -190,7 +204,7 @@ namespace Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.get_transformation(GraphicsDevice));
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend,null, null, null, null, camera.get_transformation(GraphicsDevice));
 
             for (int i = 0; i < 12; i++)
             {
@@ -202,6 +216,10 @@ namespace Game
             crabKing.Draw(spriteBatch);
             crabKing.leftArm.Draw(spriteBatch);
             crabKing.rigthArm.Draw(spriteBatch);
+
+            foreach (EnvDetails env in envDetails)
+                spriteBatch.Draw(env.tex, env.pos, Color.White);
+
             spriteBatch.End();
 
             spriteBatch.Begin();

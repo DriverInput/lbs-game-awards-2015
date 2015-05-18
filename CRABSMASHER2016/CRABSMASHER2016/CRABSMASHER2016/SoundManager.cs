@@ -18,8 +18,12 @@ namespace Game
         #endregion
 
         static SoundEffect[] magicalSounds = new SoundEffect[6];
-        //static SoundEffect[] swordSounds = new SoundEffect[4];
         static SoundEffect[] stepSounds = new SoundEffect[10];
+        static Vector2[] soundPoints = new Vector2[]{
+            new Vector2(1300,500),
+            new Vector2(3000,5200),
+            new Vector2(10000,5000)
+        };
 
         static Song waves;
         static Song nature;
@@ -32,7 +36,7 @@ namespace Game
 
             for (int i = 0; i < stepSounds.Length; i++)
             {
-                stepSounds[i] = content.Load<SoundEffect>("step" + (i + 1));
+                stepSounds[i] = content.Load<SoundEffect>("stepSounds/step" + (i + 1));
             }
             //for (int i = 0; i < swordSounds.Length; i++)
             //{
