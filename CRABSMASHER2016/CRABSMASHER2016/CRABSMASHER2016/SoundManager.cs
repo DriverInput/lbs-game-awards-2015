@@ -30,7 +30,7 @@ namespace Game
 
         public static void LoadContent(ContentManager content) 
         {
-            waves = content.Load<Song>("Waves");
+            //waves = content.Load<Song>("Waves");
             nature = content.Load<Song>("Nature sounds");
 
 
@@ -76,6 +76,11 @@ namespace Game
             prevRandom2 = newRandom2;
             //swordSounds[newRandom].Play();
             magicalSounds[newRandom2].Play();
+        }
+        public static void EnviormentSounds(Vector2 pos)
+        {
+            MediaPlayer.Play(waves);
+            MediaPlayer.Play(nature);
         }
     }
 }
