@@ -21,8 +21,15 @@ namespace Game
         //static SoundEffect[] swordSounds = new SoundEffect[4];
         static SoundEffect[] stepSounds = new SoundEffect[10];
 
+        static Song waves;
+        static Song nature;
+
         public static void LoadContent(ContentManager content) 
         {
+            waves = content.Load<Song>("Waves");
+            nature = content.Load<Song>("Nature sounds");
+
+
             for (int i = 0; i < stepSounds.Length; i++)
             {
                 stepSounds[i] = content.Load<SoundEffect>("step" + (i + 1));
