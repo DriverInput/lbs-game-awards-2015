@@ -128,7 +128,6 @@ C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER201
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step7.xnb
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step8.xnb
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\stepSounds\step9.xnb
-C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder2.xnb
 C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 1.xnb
 C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 2.xnb
 C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\magical sound 3.xnb
@@ -149,3 +148,4 @@ C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER201
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 5.xnb
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 2.xnb
 C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 3.xnb
+C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb

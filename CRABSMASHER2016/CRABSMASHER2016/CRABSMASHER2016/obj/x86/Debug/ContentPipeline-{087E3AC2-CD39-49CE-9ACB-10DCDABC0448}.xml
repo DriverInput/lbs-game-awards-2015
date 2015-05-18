@@ -398,15 +398,6 @@
       <Time>2015-05-06T12:48:33.229915+02:00</Time>
     </Item>
     <Item>
-      <Source>spriteplaceholder2.png</Source>
-      <Name>spriteplaceholder2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder2.xnb</Output>
-      <Time>2015-05-06T12:48:32.943915+02:00</Time>
-    </Item>
-    <Item>
       <Source>magical sound 1.wav</Source>
       <Name>magical sound 1</Name>
       <Importer>WavImporter</Importer>
@@ -495,6 +486,15 @@
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Sword 3.xnb</Output>
       <Time>2015-05-06T12:48:37.876915+02:00</Time>
+    </Item>
+    <Item>
+      <Source>spriteplaceholder.png</Source>
+      <Name>spriteplaceholder</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb</Output>
+      <Time>2015-05-17T22:20:08.1289829+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

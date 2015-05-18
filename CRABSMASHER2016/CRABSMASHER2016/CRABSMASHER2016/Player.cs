@@ -186,7 +186,6 @@ namespace Game
 
         public void Update()
         {
-
             cooldown_DisableControls.Update();
             bar.update(hp / maxHp, stamina / maxStamina);
 
@@ -223,7 +222,7 @@ namespace Game
                     if (Continue)
                     {
                         FrameTimer++;
-
+                        
 
                         if (FrameTimer == 0 && CurrentFrame == 0 || FrameTimer == 0 && CurrentFrame == 4)
                         {

@@ -42,7 +42,6 @@ Content\stepSounds\step6.xnb
 Content\stepSounds\step7.xnb
 Content\stepSounds\step8.xnb
 Content\stepSounds\step9.xnb
-Content\spriteplaceholder2.xnb
 Content\magical sound 1.xnb
 Content\magical sound 2.xnb
 Content\magical sound 3.xnb
@@ -53,3 +52,4 @@ Content\Sword 4.xnb
 Content\Sword 5.xnb
 Content\Sword 2.xnb
 Content\Sword 3.xnb
+Content\spriteplaceholder.xnb
