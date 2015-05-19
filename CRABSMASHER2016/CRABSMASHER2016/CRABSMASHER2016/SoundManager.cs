@@ -25,14 +25,22 @@ namespace Game
             new Vector2(10000,5000)
         };
 
-        static Song waves;
-        static Song nature;
+        static SoundEffectInstance waveInstanceEast;
+        static SoundEffectInstance waveInstanceWest;
+        static SoundEffectInstance natureInstance;
+
+        static SoundEffect waves;
+        static SoundEffect nature;
 
         public static void LoadContent(ContentManager content) 
         {
-            //waves = content.Load<Song>("Waves");
-            nature = content.Load<Song>("Nature sounds");
+            waves = content.Load<SoundEffect>("Waves");
+            nature = content.Load<SoundEffect>("Nature sounds");
 
+            waveInstanceEast = waves.CreateInstance();
+            waveInstanceWest = waves.CreateInstance();
+            natureInstance = nature.CreateInstance();
+           
 
             for (int i = 0; i < stepSounds.Length; i++)
             {
@@ -79,8 +87,14 @@ namespace Game
         }
         public static void EnviormentSounds(Vector2 pos)
         {
-            MediaPlayer.Play(waves);
-            MediaPlayer.Play(nature);
+            natureInstance.IsLooped = true;
+            waveInstanceEast.IsLooped = true;
+            waveInstanceWest.IsLooped = true;
+            waveInstanceEast.Play();
+            waveInstanceWest.Play();
+            natureInstance.Play();
+
+
         }
     }
 }
