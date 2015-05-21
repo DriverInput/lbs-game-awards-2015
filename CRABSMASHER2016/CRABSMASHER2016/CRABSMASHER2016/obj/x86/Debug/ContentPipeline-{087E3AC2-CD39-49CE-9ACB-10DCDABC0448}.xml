@@ -20,15 +20,6 @@
       <Time>2015-04-21T16:06:25.1721829+02:00</Time>
     </Item>
     <Item>
-      <Source>CrabKing.png</Source>
-      <Name>CrabKing</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\CrabKing.xnb</Output>
-      <Time>2015-04-21T16:06:25.1871784+02:00</Time>
-    </Item>
-    <Item>
       <Source>bar.png</Source>
       <Name>bar</Name>
       <Importer>TextureImporter</Importer>
@@ -495,6 +486,15 @@
       <Options>None</Options>
       <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\spriteplaceholder.xnb</Output>
       <Time>2015-05-17T22:20:08.1289829+02:00</Time>
+    </Item>
+    <Item>
+      <Source>kingCrab.png</Source>
+      <Name>kingCrab</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kristoffer.franzon\Documents\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\kingCrab.xnb</Output>
+      <Time>2015-05-18T13:50:02.5164912+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -16,11 +16,14 @@ namespace Game
         public CrabArm leftArm;
         public CrabArm rigthArm;
 
+        int frameMax = 7;
+
         public CrabKing()
         {
             textureID = "CrabKing";
-            width = 100;
-            height = 100;
+            width = 3400/4;
+            height = 645;
+            maxFrameTimer = 20;
             origin = new Vector2(width / 2, height / 2);
             position = new Vector2(1000, 500);
             leftArm = new CrabArm(position - Vector2.UnitX * (width), SpriteEffects.None);
@@ -29,7 +32,10 @@ namespace Game
 
         public void Update()
         {
-            CurrentFrame++;
+            FrameTimer++;
+
+            
+
             leftArm.Update();
             rigthArm.Update();
         }

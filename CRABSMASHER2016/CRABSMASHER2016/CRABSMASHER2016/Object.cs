@@ -15,8 +15,9 @@ namespace Game
     {
         public Vector2 position;
         public Rectangle sourceRectangle
-        { 
-            get{
+        {
+            get
+            {
                 return new Rectangle(CurrentFrame * width, (currentAnimation) * height, width, height);
             }
         }
@@ -47,7 +48,8 @@ namespace Game
         }
 
         private int currentFrame = 0;
-        public int CurrentFrame {
+        public int CurrentFrame
+        {
             get
             {
                 return currentFrame;
@@ -83,7 +85,13 @@ namespace Game
 
         public int maxFrameTimer;
 
-        public int maxFrame { get { return (TextureManager.Textures[textureID].Width / width) - 1; } }
+        public int maxFrame
+        {
+            get
+            {
+                return (TextureManager.Textures[textureID].Width / width) - 1;
+            }
+        }
         public int maxAnimation { get { return (TextureManager.Textures[textureID].Height / height) - 1; } }
 
         public SpriteEffects spriteEffect = SpriteEffects.None;

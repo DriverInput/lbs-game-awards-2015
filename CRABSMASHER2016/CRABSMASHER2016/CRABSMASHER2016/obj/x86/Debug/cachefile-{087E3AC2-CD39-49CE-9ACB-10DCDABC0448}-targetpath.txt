@@ -1,6 +1,5 @@
 Content\lil krabba spritesheet.xnb
 Content\CrabArm.xnb
-Content\CrabKing.xnb
 Content\bar.xnb
 Content\hp.xnb
 Content\stamina.xnb
@@ -53,3 +52,4 @@ Content\Sword 5.xnb
 Content\Sword 2.xnb
 Content\Sword 3.xnb
 Content\spriteplaceholder.xnb
+Content\kingCrab.xnb
