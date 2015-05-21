@@ -25,6 +25,8 @@ namespace Game
             new Vector2(10000,5000)
         };
 
+        public static SoundEffect crabHit, crabDead;
+
         static SoundEffectInstance waveInstance, natureInstance;
 
         static SoundEffect waves;
@@ -39,6 +41,9 @@ namespace Game
 
             waves = content.Load<SoundEffect>("Waves");
             nature = content.Load<SoundEffect>("Nature sounds");
+
+            crabHit = content.Load<SoundEffect>("Crab hit");
+            crabDead = content.Load<SoundEffect>("Crab dead");
 
             waveInstance = waves.CreateInstance();
             waveInstance.IsLooped = true;

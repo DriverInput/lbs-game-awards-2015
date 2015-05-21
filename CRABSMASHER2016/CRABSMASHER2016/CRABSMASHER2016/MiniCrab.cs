@@ -55,7 +55,7 @@ namespace Game
                 if (hitPoints == 0)
                 {
                     //push
-                    //crab dead sound
+                    SoundManager.crabDead.Play();
                     //currentAnimation = 1;
                     dead = true;
                 }
@@ -64,7 +64,7 @@ namespace Game
                     hitPoints--;
 
                     //Pushback
-                    //playsound
+                    SoundManager.crabHit.Play();
 
                 }
             }
