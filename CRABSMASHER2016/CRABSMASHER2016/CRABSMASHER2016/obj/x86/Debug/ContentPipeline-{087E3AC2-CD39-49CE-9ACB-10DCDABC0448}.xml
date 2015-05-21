@@ -506,14 +506,13 @@
       <Time>2015-05-18T13:37:36.1732458+02:00</Time>
     </Item>
     <Item>
-      <Source>Nature sounds.mp3</Source>
+      <Source>Nature sounds.wav</Source>
       <Name>Nature sounds</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Nature sounds.xnb</Output>
-      <Extra>C:\Users\benjamin.hurtig\Desktop\GitHub\lbs-game-awards-2015\CRABSMASHER2016\CRABSMASHER2016\CRABSMASHER2016\bin\x86\Debug\Content\Nature sounds.wma</Extra>
-      <Time>2015-05-18T13:37:36.0262164+02:00</Time>
+      <Time>2015-05-21T13:06:06.8204087+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

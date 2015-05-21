@@ -55,4 +55,3 @@ Content\Sword 2.xnb
 Content\Sword 3.xnb
 Content\Waves.xnb
 Content\Nature sounds.xnb
-Content\Nature sounds.wma

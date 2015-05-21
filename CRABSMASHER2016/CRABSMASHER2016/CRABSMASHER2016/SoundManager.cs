@@ -25,21 +25,31 @@ namespace Game
             new Vector2(10000,5000)
         };
 
-        static SoundEffectInstance waveInstanceEast;
-        static SoundEffectInstance waveInstanceWest;
-        static SoundEffectInstance natureInstance;
+        static SoundEffectInstance waveInstance, natureInstance;
 
         static SoundEffect waves;
         static SoundEffect nature;
 
+        static Rectangle waveRectangle1, waveRectangle2;
+
         public static void LoadContent(ContentManager content) 
         {
+            waveRectangle1 = new Rectangle(5388, 1176, 7669, 6121);
+            waveRectangle2 = new Rectangle(492, 3444, 4897, 2173);
+
             waves = content.Load<SoundEffect>("Waves");
             nature = content.Load<SoundEffect>("Nature sounds");
 
-            waveInstanceEast = waves.CreateInstance();
-            waveInstanceWest = waves.CreateInstance();
+            waveInstance = waves.CreateInstance();
+            waveInstance.IsLooped = true;
+            waveInstance.Play();
+            waveInstance.Volume = 1;
+
             natureInstance = nature.CreateInstance();
+            natureInstance.IsLooped = true;
+            natureInstance.Play();
+            natureInstance.Volume = 1;
+
            
 
             for (int i = 0; i < stepSounds.Length; i++)
@@ -85,16 +95,24 @@ namespace Game
             //swordSounds[newRandom].Play();
             magicalSounds[newRandom2].Play();
         }
-        public static void EnviormentSounds(Vector2 pos)
+        public static void EnviormentSounds()
         {
-            natureInstance.IsLooped = true;
-            waveInstanceEast.IsLooped = true;
-            waveInstanceWest.IsLooped = true;
-            waveInstanceEast.Play();
-            waveInstanceWest.Play();
-            natureInstance.Play();
-
-
+            if ((Main.player.rectangle.Intersects(waveRectangle1) || Main.player.rectangle.Intersects(waveRectangle2)) && waveInstance.Volume < 0.99)
+            {
+                waveInstance.Volume += 0.01f;
+                if (natureInstance.Volume > 0.01)
+                {
+                    natureInstance.Volume -= 0.01f;
+                }
+            }
+            else if (waveInstance.Volume > 0.01)
+            {
+                waveInstance.Volume -= 0.01f;
+                if (natureInstance.Volume < 0.99)
+                {
+                    natureInstance.Volume += 0.01f;
+                }
+            }
         }
     }
 }
