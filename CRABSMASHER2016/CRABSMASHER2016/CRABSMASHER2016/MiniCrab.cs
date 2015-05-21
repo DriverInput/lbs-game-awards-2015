@@ -14,9 +14,19 @@ namespace Game
     class MiniCrab : Object
     {
         float targetAngle;
+        public bool destroy;
+        public bool dead;
+        int hitPoints;
+        public int timer;
+        public int maxTimer;
 
         public MiniCrab()
         {
+            timer = 0;
+            maxTimer = 5;
+            hitPoints = 2;
+            dead = true;
+            destroy = false;
             width = 180;
             height = 128;
             angle = 0;
@@ -33,10 +43,31 @@ namespace Game
             velocity = Converter.Float.CosSin(targetAngle) * speed;
             position += velocity;
 
-            //Rectangle playerOffSetRectangle = new Rectangle(player.rectangle.X, player.rectangle.Y, player.rectangle.Width, player.rectangle.Height);
-            //player.position = RectangleToRectangle(player.Colition, this.rectangle);// RectangleToRectangle(player.position.X, player.position.Y, player.width, player.height, position.X, position.Y, width, height);
-
+            Rectangle playerOffSetRectangle = new Rectangle(player.rectangle.X, player.rectangle.Y, player.rectangle.Width, player.rectangle.Height);
+            player.position = RectangleToRectangle(player.rectangle, this.rectangle);// RectangleToRectangle(player.position.X, player.position.Y, player.width, player.height, position.X, position.Y, width, height);
             FrameTimer++;
+        }
+
+        public void GettingHit()
+        {
+            if (true && !dead)
+            {
+                if (hitPoints == 0)
+                {
+                    //push
+                    SoundManager.crabDead.Play();
+                    //currentAnimation = 1;
+                    dead = true;
+                }
+                else
+                {
+                    hitPoints--;
+
+                    //Pushback
+                    SoundManager.crabHit.Play();
+
+                }
+            }
         }
     }
 }

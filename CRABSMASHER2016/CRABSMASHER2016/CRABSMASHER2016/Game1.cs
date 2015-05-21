@@ -29,10 +29,10 @@ namespace Game
         SpriteBatch spriteBatch;
 
         public static Player player;
-        MiniCrab miniCrab = new MiniCrab();
         CrabKing crabKing = new CrabKing();
         Camera camera = new Camera();
 
+        List<MiniCrab> miniCrabs = new List<MiniCrab>();
         List<Tile> tiles = new List<Tile>();
         List<Rectangle> rectangeList = new List<Rectangle>();
         public static Rectangle[] collisionMaskRects = new Rectangle[12];
@@ -140,6 +140,9 @@ namespace Game
             {
                 Console.ReadLine();
             }
+
+            miniCrabs.Add(new MiniCrab());
+
             base.Initialize();
         }
 
@@ -155,8 +158,26 @@ namespace Game
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
+            SoundManager.EnviormentSounds();
+
             player.Update();
-            miniCrab.Update(player);
+
+            foreach (MiniCrab m in miniCrabs)
+            {
+                if (!m.dead)
+                {
+                    m.Update(player);
+                    m.GettingHit();
+                }
+            }
+            for (int i = 0; i < miniCrabs.Count; i++)
+                if (miniCrabs[i].destroy)
+                    miniCrabs.RemoveAt(i);
+
+            if (miniCrabs.Count == 0) { miniCrabs.Add(new MiniCrab()); }
+
+
+
             camera.Pos = player.position + new Vector2(player.width / 2, player.height / 2);
             if (Keyboard.GetState().IsKeyDown(Keys.Q))
                 zoom -= 0.01f;
@@ -207,11 +228,24 @@ namespace Game
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend,null, null, null, null, camera.get_transformation(GraphicsDevice));
 
             for (int i = 0; i < 12; i++)
-            {
                 spriteBatch.Draw(environment[i], collisionMaskRects[i], Color.White);
-            }
 
-            miniCrab.Draw(spriteBatch);
+            foreach (MiniCrab m in miniCrabs)
+            {
+                if (!m.dead) m.Draw(spriteBatch);
+
+                if (m.dead)
+                {
+                    m.timer++;
+
+                    if (m.timer > m.maxTimer / 2)
+                        m.Draw(spriteBatch);
+                    else if (m.timer > m.maxTimer)
+                        m.maxTimer++;
+
+                    if (m.maxTimer > 20) m.destroy = true;    
+                }
+            }
             player.Draw(spriteBatch);
             crabKing.Draw(spriteBatch);
             crabKing.leftArm.Draw(spriteBatch);

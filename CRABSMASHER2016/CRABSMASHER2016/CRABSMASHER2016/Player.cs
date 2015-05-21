@@ -24,6 +24,8 @@ namespace Game
         float amount;
         int rollTimer;
         int rollMaxTimer;
+        int attackTimer;
+        int attackMaxTimer;
 
         //Rectangle Colition
         //{
@@ -122,7 +124,7 @@ namespace Game
 
         public bool isRolling;
         public bool isStunned;
-        bool isAttacking;
+        public bool isAttacking;
 
         public Player()
         {
@@ -134,6 +136,8 @@ namespace Game
             position = new Vector2(2500, 2000); // set bether position later
             isRolling = false;
             maxFrameTimer = 4;
+            attackTimer = 0;
+            attackMaxTimer = 27;
             rollTimer = 0;
             rollMaxTimer = 25 + 7;
             width = 146;
@@ -204,7 +208,7 @@ namespace Game
             newState = Keyboard.GetState();
 
             #region movement
-            if (!isRolling && !isStunned)//(cooldown_DisableControls.Output())00
+            if (!isRolling && !isStunned && !isAttacking)//(cooldown_DisableControls.Output())00
             {
                 stamina = (stamina += 0.5f) > maxStamina ? maxStamina : stamina;
 
@@ -237,6 +241,13 @@ namespace Game
 
                 currentAnimation = this.dir;
 
+                if (newState.IsKeyDown(Keys.Enter) && oldState.IsKeyUp(Keys.Enter) && stamina > attackMaxTimer)
+                {
+                    cooldown_DisableControls.Use();
+                    isAttacking = true;
+
+                }
+
                 if (newState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) && stamina >= rollMaxTimer)
                 {
                     cooldown_DisableControls.Use();
@@ -246,6 +257,19 @@ namespace Game
                     dy = position.Y + (float)Math.Sin(MathHelper.ToRadians(dir * 45)) * rollLength * 0.8f;
                 }
             }
+            if (isAttacking)
+            {
+                attackTimer++;
+                FrameTimer++;
+                stamina -= 1;
+            }
+
+            if (attackTimer == attackMaxTimer)
+            {
+                attackTimer = 0;
+                isAttacking = false;
+            }
+
 
             if (isRolling)
             {

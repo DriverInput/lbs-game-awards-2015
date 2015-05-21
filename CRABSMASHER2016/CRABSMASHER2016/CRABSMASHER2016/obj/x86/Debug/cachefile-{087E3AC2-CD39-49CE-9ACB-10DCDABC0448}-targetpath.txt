@@ -16,7 +16,7 @@ Content\CollisionMasks\CM6.xnb
 Content\CollisionMasks\CM7.xnb
 Content\CollisionMasks\CM8.xnb
 Content\CollisionMasks\CM9.xnb
-Content\mapParts\MapPart1.xnb
+Content\hitBoxTexture.xnb
 Content\mapParts\MapPart10.xnb
 Content\mapParts\MapPart11.xnb
 Content\mapParts\MapPart12.xnb
@@ -28,9 +28,10 @@ Content\mapParts\MapPart6.xnb
 Content\mapParts\MapPart7.xnb
 Content\mapParts\MapPart8.xnb
 Content\mapParts\MapPart9.xnb
-Content\hitBoxTexture.xnb
 Content\cliffs.xnb
 Content\valv.xnb
+Content\mapParts\mapPart1.xnb
+Content\spriteplaceholder.xnb
 Content\stepSounds\step1.xnb
 Content\stepSounds\step10.xnb
 Content\stepSounds\step2.xnb
@@ -51,5 +52,10 @@ Content\Sword 4.xnb
 Content\Sword 5.xnb
 Content\Sword 2.xnb
 Content\Sword 3.xnb
+<<<<<<< HEAD
 Content\spriteplaceholder.xnb
 Content\kingCrab.xnb
+=======
+Content\Waves.xnb
+Content\Nature sounds.xnb
+>>>>>>> origin/master
