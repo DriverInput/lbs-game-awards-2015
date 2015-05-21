@@ -15,9 +15,17 @@ namespace Game
     {
         float targetAngle;
         public bool destroy;
+        public bool dead;
+        int hitPoints;
+        public int timer;
+        public int maxTimer;
 
         public MiniCrab()
         {
+            timer = 0;
+            maxTimer = 5;
+            hitPoints = 2;
+            dead = true;
             destroy = false;
             width = 180;
             height = 128;
@@ -40,26 +48,24 @@ namespace Game
             FrameTimer++;
         }
 
-        float angle;
-        float angleDif;
-        int dist;
         public void GettingHit()
         {
-            angle = Main.player.dir * 45;
-            angleDif = MathHelper.ToDegrees((float)Math.Atan2(position.Y - Main.player.position.Y, position.X - Main.player.position.X));
-            dist = (int)Math.Sqrt(Math.Pow(position.X - Main.player.position.X, 2) + Math.Pow(position.Y - Main.player.position.Y, 2));
-            //angleDif = MathHelper.ToDegrees((float)Math.Atan2(Main.player.position.Y - position.Y, Main.player.position.X - position.X));
-            Console.Clear();
-            Console.WriteLine("angleDif " + angleDif);
-            Console.WriteLine("player angle " + angle);
-            Console.WriteLine("dist " + dist);
-            if (angleDif > angle - 22.5f && angleDif < angle + 22.5f && dist < 270)
+            if (true && !dead)
             {
-                if (Main.player.isAttacking)
+                if (hitPoints == 0)
                 {
-                    destroy = true;
-                    //crab death sound.play 
-                    //eller crab hit sound.play
+                    //push
+                    //crab dead sound
+                    //currentAnimation = 1;
+                    dead = true;
+                }
+                else
+                {
+                    hitPoints--;
+
+                    //Pushback
+                    //playsound
+
                 }
             }
         }

@@ -164,16 +164,16 @@ namespace Game
 
             foreach (MiniCrab m in miniCrabs)
             {
-                m.Update(player);
-                m.GettingHit();
-            }
-            for (int i = 0; i < miniCrabs.Count; i++)
-            {
-                if (miniCrabs[i].destroy)
+                if (!m.dead)
                 {
-                    miniCrabs.RemoveAt(i);
+                    m.Update(player);
+                    m.GettingHit();
                 }
             }
+            for (int i = 0; i < miniCrabs.Count; i++)
+                if (miniCrabs[i].destroy)
+                    miniCrabs.RemoveAt(i);
+
             if (miniCrabs.Count == 0) { miniCrabs.Add(new MiniCrab()); }
 
 
@@ -228,13 +228,23 @@ namespace Game
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend,null, null, null, null, camera.get_transformation(GraphicsDevice));
 
             for (int i = 0; i < 12; i++)
-            {
                 spriteBatch.Draw(environment[i], collisionMaskRects[i], Color.White);
-            }
 
             foreach (MiniCrab m in miniCrabs)
             {
-                m.Draw(spriteBatch);
+                if (!m.dead) m.Draw(spriteBatch);
+
+                if (m.dead)
+                {
+                    m.timer++;
+
+                    if (m.timer > m.maxTimer / 2)
+                        m.Draw(spriteBatch);
+                    else if (m.timer > m.maxTimer)
+                        m.maxTimer++;
+
+                    if (m.maxTimer > 20) m.destroy = true;    
+                }
             }
             player.Draw(spriteBatch);
             crabKing.Draw(spriteBatch);
